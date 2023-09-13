@@ -538,11 +538,52 @@ export const WBTC_MOONBEAM = new Token(
   'Wrapped BTC bridged using Multichain'
 );
 
+export const WBTT_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C',
+  18,
+  'WBTT',
+  'Wrapped Bit Torrent'
+);
+
+export const USDC_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E',
+  6,
+  'USDC_e',
+  'USD Coin (ETH)'
+)
+
+export const WBTC_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0x9888221fE6B5A2ad4cE7266c7826D2AD74D40CcF',
+  8,
+  'WBTC_e',
+  'Wrapped Bitcoin (ETH)'
+)
+
+export const USDT_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0xdB28719F7f938507dBfe4f0eAe55668903D34a15',
+  6,
+  'USDT_t',
+  'USD Tether (Tron)'
+)
+
+export const ETH_BITTORRENT = new Token(
+  ChainId.BIT_TORRENT_MAINNET,
+  '0x1249C65AfB11D179FFB3CE7D4eEDd1D9b98AD006',
+  18,
+  'ETH',
+  'Ether'
+)
+
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
     protected multicall2Provider: IMulticallProvider
-  ) {}
+  ) { }
 
   private async getTokenSymbol(
     addresses: string[],
@@ -687,10 +728,8 @@ export class TokenProvider implements ITokenProvider {
       }
 
       log.info(
-        `Got token symbol and decimals for ${
-          Object.values(addressToToken).length
-        } out of ${addresses.length} tokens on-chain ${
-          providerConfig ? `as of: ${providerConfig?.blockNumber}` : ''
+        `Got token symbol and decimals for ${Object.values(addressToToken).length
+        } out of ${addresses.length} tokens on-chain ${providerConfig ? `as of: ${providerConfig?.blockNumber}` : ''
         }`
       );
     }
@@ -795,6 +834,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_BASE;
     case ChainId.BASE_GOERLI:
       return USDC_BASE_GOERLI;
+    case ChainId.BIT_TORRENT_MAINNET:
+      return USDC_BITTORRENT;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

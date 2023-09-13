@@ -1,5 +1,5 @@
 import { BigNumber } from '@ethersproject/bignumber';
-import { ChainId, Token } from '@uniswap/sdk-core';
+import { ChainId, Token, V2_FACTORY_ADDRESSES, V2_FACTORY_INIT_HASH } from '@uniswap/sdk-core';
 import { Pair } from '@uniswap/v2-sdk';
 import retry, { Options as RetryOptions } from 'async-retry';
 import _ from 'lodash';
@@ -87,7 +87,7 @@ export class V2PoolProvider implements IV2PoolProvider {
       minTimeout: 50,
       maxTimeout: 500,
     }
-  ) {}
+  ) { }
 
   public async getPools(
     tokenPairs: [Token, Token][],
@@ -143,10 +143,9 @@ export class V2PoolProvider implements IV2PoolProvider {
     ]);
 
     log.info(
-      `Got reserves for ${poolAddressSet.size} pools ${
-        providerConfig?.blockNumber
-          ? `as of block: ${await providerConfig?.blockNumber}.`
-          : ``
+      `Got reserves for ${poolAddressSet.size} pools ${providerConfig?.blockNumber
+        ? `as of block: ${await providerConfig?.blockNumber}.`
+        : ``
       }`
     );
 
@@ -199,9 +198,12 @@ export class V2PoolProvider implements IV2PoolProvider {
 
       const { reserve0, reserve1 } = reservesResult.result;
 
+
       const pool = new Pair(
         CurrencyAmount.fromRawAmount(token0, reserve0.toString()),
-        CurrencyAmount.fromRawAmount(token1, reserve1.toString())
+        CurrencyAmount.fromRawAmount(token1, reserve1.toString()),
+        V2_FACTORY_ADDRESSES[token0.chainId],
+        V2_FACTORY_INIT_HASH[token0.chainId]
       );
 
       const poolAddress = sortedPoolAddresses[i]!;
@@ -252,7 +254,10 @@ export class V2PoolProvider implements IV2PoolProvider {
       return { poolAddress: cachedAddress, token0, token1 };
     }
 
-    const poolAddress = Pair.getAddress(token0, token1);
+    const factoryAddress = V2_FACTORY_ADDRESSES[tokenA.chainId];
+    const initHashCode = V2_FACTORY_INIT_HASH[tokenA.chainId];
+    const poolAddress = Pair.getAddress(token0, token1, factoryAddress, initHashCode);
+
 
     this.POOL_ADDRESS_CACHE[cacheKey] = poolAddress;
 

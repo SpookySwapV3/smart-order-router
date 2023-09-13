@@ -362,7 +362,7 @@ export type AlphaRouterConfig = {
 
 export class AlphaRouter
   implements IRouter<AlphaRouterConfig>,
-    ISwapToRatio<AlphaRouterConfig, SwapAndAddConfig> {
+  ISwapToRatio<AlphaRouterConfig, SwapAndAddConfig> {
   protected chainId: ChainId;
   protected provider: BaseProvider;
   protected multicall2Provider: UniswapMulticallProvider;
@@ -553,6 +553,8 @@ export class AlphaRouter
             }
           );
           break;
+        //TODO: fill in configuration
+        case ChainId.BIT_TORRENT_MAINNET:
         default:
           this.onChainQuoteProvider = new OnChainQuoteProvider(
             chainId,
@@ -709,6 +711,7 @@ export class AlphaRouter
         arbitrumGasDataProvider ??
         new ArbitrumGasDataProvider(chainId, this.provider);
     }
+    
 
     // Initialize the Quoters.
     // Quoters are an abstraction encapsulating the business logic of fetching routes and quotes.
@@ -1183,16 +1186,16 @@ export class AlphaRouter
       const tokenInWithFotTax =
         (tokenPropertiesMap[tokenIn.address.toLowerCase()]
           ?.tokenValidationResult === TokenValidationResult.FOT) ?
-        new Token(
-          tokenIn.chainId,
-          tokenIn.address,
-          tokenIn.decimals,
-          tokenIn.symbol,
-          tokenIn.name,
-          true, // at this point we know it's valid token address
-          tokenPropertiesMap[tokenIn.address.toLowerCase()]?.tokenFeeResult?.buyFeeBps,
-          tokenPropertiesMap[tokenIn.address.toLowerCase()]?.tokenFeeResult?.sellFeeBps
-        ) : tokenIn;
+          new Token(
+            tokenIn.chainId,
+            tokenIn.address,
+            tokenIn.decimals,
+            tokenIn.symbol,
+            tokenIn.name,
+            true, // at this point we know it's valid token address
+            tokenPropertiesMap[tokenIn.address.toLowerCase()]?.tokenFeeResult?.buyFeeBps,
+            tokenPropertiesMap[tokenIn.address.toLowerCase()]?.tokenFeeResult?.sellFeeBps
+          ) : tokenIn;
 
       const tokenOutWithFotTax =
         (tokenPropertiesMap[tokenOut.address.toLowerCase()]
@@ -1493,7 +1496,8 @@ export class AlphaRouter
     const v2ProtocolSpecified = protocols.includes(Protocol.V2);
     const v2SupportedInChain = V2_SUPPORTED.includes(this.chainId);
     const shouldQueryMixedProtocol = protocols.includes(Protocol.MIXED) || (noProtocolsSpecified && v2SupportedInChain);
-    const mixedProtocolAllowed = [ChainId.MAINNET, ChainId.GOERLI].includes(this.chainId) &&
+    //TODO: This should not be hard coded, we probably can just grab it from the SDK-Core v2 factory contracts address keys instead
+    const mixedProtocolAllowed = [ChainId.MAINNET, ChainId.GOERLI, ChainId.BIT_TORRENT_MAINNET].includes(this.chainId) &&
       tradeType === TradeType.EXACT_INPUT;
 
     const beforeGetCandidates = Date.now();
@@ -1587,29 +1591,29 @@ export class AlphaRouter
       const beforeGetRoutesThenQuotes = Date.now();
 
       quotePromises.push(
-          v2CandidatePoolsPromise.then((v2CandidatePools) =>
-              this.v2Quoter.getRoutesThenQuotes(
-                  tokenIn,
-                  tokenOut,
-                  amount,
-                  amounts,
-                  percents,
-                  quoteToken,
-                  v2CandidatePools!,
-                  tradeType,
-                  routingConfig,
-                  undefined,
-                  gasPriceWei
-              ).then((result) => {
-                metric.putMetric(
-                    `SwapRouteFromChain_V2_GetRoutesThenQuotes_Load`,
-                    Date.now() - beforeGetRoutesThenQuotes,
-                    MetricLoggerUnit.Milliseconds
-                );
+        v2CandidatePoolsPromise.then((v2CandidatePools) =>
+          this.v2Quoter.getRoutesThenQuotes(
+            tokenIn,
+            tokenOut,
+            amount,
+            amounts,
+            percents,
+            quoteToken,
+            v2CandidatePools!,
+            tradeType,
+            routingConfig,
+            undefined,
+            gasPriceWei
+          ).then((result) => {
+            metric.putMetric(
+              `SwapRouteFromChain_V2_GetRoutesThenQuotes_Load`,
+              Date.now() - beforeGetRoutesThenQuotes,
+              MetricLoggerUnit.Milliseconds
+            );
 
-                return result;
-              })
-          )
+            return result;
+          })
+        )
       );
     }
 

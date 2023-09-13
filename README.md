@@ -60,6 +60,7 @@ JSON_RPC_PROVIDER_CELO_ALFAJORES = '<JSON_RPC_PROVIDER>'
 JSON_RPC_PROVIDER_BNB = '<JSON_RPC_PROVIDER>'
 JSON_RPC_PROVIDER_AVALANCHE = '<JSON_RPC_PROVIDER>'
 JSON_RPC_PROVIDER_BASE = '<JSON_RPC_PROVIDER>'
+JSON_RPC_PROVIDER_BIT_TORRENT = '<JSON_RPC_PROVIDER>'
 ```
 
 Then from the root directory you can execute the CLI.
@@ -223,6 +224,14 @@ Total ticks crossed: 7
 ```
 ./bin/cli quote --tokenIn 0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA --tokenOut 0x4200000000000000000000000000000000000006 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 8453
 ```
+
+## Bittorrent Mainnet
+
+```
+./bin/cli quote --tokenIn 0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C --tokenOut 0x8D11eC38a3EB5E956B052f67Da8Bdc9bef8Abf3E --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 199
+```
+
+
 
 
 ## Adding a new Chain

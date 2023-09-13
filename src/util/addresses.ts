@@ -20,6 +20,7 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].v3CoreFactoryAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].v3CoreFactoryAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].v3CoreFactoryAddress,
+  [ChainId.BIT_TORRENT_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -34,12 +35,14 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].quoterAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].quoterAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].quoterAddress,
+  [ChainId.BIT_TORRENT_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
 export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
   [ChainId.MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MAINNET].v1MixedRouteQuoterAddress,
   [ChainId.GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOERLI].v1MixedRouteQuoterAddress,
+  [ChainId.BIT_TORRENT_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].v1MixedRouteQuoterAddress,
 };
 
 export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
@@ -53,10 +56,11 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.AVALANCHE]: CHAIN_TO_ADDRESSES_MAP[ChainId.AVALANCHE].multicallAddress,
   [ChainId.BASE_GOERLI]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE_GOERLI].multicallAddress,
   [ChainId.BASE]: CHAIN_TO_ADDRESSES_MAP[ChainId.BASE].multicallAddress,
+  [ChainId.BIT_TORRENT_MAINNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
-export const SWAP_ROUTER_02_ADDRESSES = (chainId: number) : string => {
+export const SWAP_ROUTER_02_ADDRESSES = (chainId: number): string => {
   if (chainId == ChainId.BNB) {
     return BNB_SWAP_ROUTER_02_ADDRESS;
   }
@@ -98,6 +102,7 @@ export const WETH9: {
     | ChainId.MOONBEAM
     | ChainId.BNB
     | ChainId.AVALANCHE
+    | ChainId.BIT_TORRENT_MAINNET
   >]: Token;
 } = {
   [ChainId.MAINNET]: new Token(
@@ -162,5 +167,5 @@ export const WETH9: {
     18,
     'WETH',
     'Wrapped Ether'
-  )
+  ),
 };

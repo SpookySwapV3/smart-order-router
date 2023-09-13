@@ -64,6 +64,8 @@ export const DEFAULT_ROUTING_CONFIG_BY_CHAIN = (
         distributionPercent: 25,
         forceCrossProtocol: false,
       };
+    //TODO: Fill in configuration values
+    case ChainId.BIT_TORRENT_MAINNET:
     default:
       return {
         v2PoolSelection: {

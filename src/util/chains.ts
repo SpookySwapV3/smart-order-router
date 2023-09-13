@@ -16,6 +16,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.BNB,
   ChainId.AVALANCHE,
   ChainId.BASE,
+  ChainId.BIT_TORRENT_MAINNET,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -23,6 +24,7 @@ export const V2_SUPPORTED = [
   ChainId.MAINNET,
   ChainId.GOERLI,
   ChainId.SEPOLIA,
+  ChainId.BIT_TORRENT_MAINNET,
 ];
 
 export const HAS_L1_FEE = [
@@ -32,6 +34,7 @@ export const HAS_L1_FEE = [
   ChainId.ARBITRUM_GOERLI,
   ChainId.BASE,
   ChainId.BASE_GOERLI,
+  // ChainId.BIT_TORRENT_MAINNET,
 ];
 
 export const NETWORKS_WITH_SAME_UNISWAP_ADDRESSES = [
@@ -79,6 +82,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.BASE;
     case 84531:
       return ChainId.BASE_GOERLI;
+    case 199:
+      return ChainId.BIT_TORRENT_MAINNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -102,6 +107,7 @@ export enum ChainName {
   AVALANCHE = 'avalanche-mainnet',
   BASE = 'base-mainnet',
   BASE_GOERLI = 'base-goerli',
+  BIT_TORRENT_MAINNET = 'bit-torrent-mainnet',
 }
 
 
@@ -114,6 +120,7 @@ export enum NativeCurrencyName {
   MOONBEAM = 'GLMR',
   BNB = 'BNB',
   AVALANCHE = 'AVAX',
+  BIT_TORRENT = 'BTT'
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -177,6 +184,12 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
     'ETH',
     'ETHER',
     '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+  ],
+  [ChainId.BIT_TORRENT_MAINNET]: [
+    'BTT',
+    'BITTORRENT',
+    //'0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'
+    '0x0000000000000000000000000000000000001010',
   ]
 };
 
@@ -197,6 +210,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.BNB]: NativeCurrencyName.BNB,
   [ChainId.AVALANCHE]: NativeCurrencyName.AVALANCHE,
   [ChainId.BASE]: NativeCurrencyName.ETHER,
+  [ChainId.BIT_TORRENT_MAINNET]: NativeCurrencyName.BIT_TORRENT,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -235,6 +249,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.BASE;
     case 84531:
       return ChainName.BASE_GOERLI;
+    case 199:
+      return ChainName.BIT_TORRENT_MAINNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -274,6 +290,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_AVALANCHE!;
     case ChainId.BASE:
       return process.env.JSON_RPC_PROVIDER_BASE!;
+    case ChainId.BIT_TORRENT_MAINNET:
+      return process.env.JSON_RPC_PROVIDER_BIT_TORRENT!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -400,7 +418,15 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WETH',
     'Wrapped Ether'
+  ),
+  [ChainId.BIT_TORRENT_MAINNET]: new Token(
+    ChainId.BIT_TORRENT_MAINNET,
+    '0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C',
+    18,
+    'WBTT',
+    'Wrapped Bit torrent'
   )
+
 };
 
 function isMatic(
@@ -551,6 +577,30 @@ class AvalancheNativeCurrency extends NativeCurrency {
   }
 }
 
+function isBittorrent(chainId: number): chainId is ChainId.BIT_TORRENT_MAINNET {
+  return chainId === ChainId.BIT_TORRENT_MAINNET;
+}
+
+class BitTorrentNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+
+  get wrapped(): Token {
+    if (!isBittorrent(this.chainId)) throw new Error('Not bittorrent');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+
+  public constructor(chainId: number) {
+    if (!isBittorrent(chainId)) throw new Error('Not Bittorrent');
+    super(chainId, 18, 'BTT', 'Bit torrent');
+  }
+}
+
 export class ExtendedEther extends Ether {
   public get wrapped(): Token {
     if (this.chainId in WRAPPED_NATIVE_CURRENCY) {
@@ -588,6 +638,8 @@ export function nativeOnChain(chainId: number): NativeCurrency {
     cachedNativeCurrency[chainId] = new BnbNativeCurrency(chainId);
   } else if (isAvax(chainId)) {
     cachedNativeCurrency[chainId] = new AvalancheNativeCurrency(chainId);
+  } else if (isBittorrent(chainId)) {
+    cachedNativeCurrency[chainId] = new BitTorrentNativeCurrency(chainId);
   } else {
     cachedNativeCurrency[chainId] = ExtendedEther.onChain(chainId);
   }

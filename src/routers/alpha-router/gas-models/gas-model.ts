@@ -19,6 +19,7 @@ import {
   USDC_ARBITRUM_GOERLI,
   USDC_AVAX,
   USDC_BASE,
+  USDC_BITTORRENT,
   USDC_BNB,
   USDC_ETHEREUM_GNOSIS,
   USDC_GOERLI,
@@ -74,6 +75,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BNB]: [USDT_BNB, USDC_BNB, DAI_BNB],
   [ChainId.AVALANCHE]: [DAI_AVAX, USDC_AVAX],
   [ChainId.BASE]: [USDC_BASE],
+  [ChainId.BIT_TORRENT_MAINNET]: [USDC_BITTORRENT],
 };
 
 export type L1ToL2GasCosts = {
@@ -90,8 +92,8 @@ export type BuildOnChainGasModelFactoryType = {
   quoteToken: Token;
   v2poolProvider: IV2PoolProvider;
   l2GasDataProvider?:
-    | IL2GasDataProvider<OptimismGasData>
-    | IL2GasDataProvider<ArbitrumGasData>;
+  | IL2GasDataProvider<OptimismGasData>
+  | IL2GasDataProvider<ArbitrumGasData>;
   providerConfig?: ProviderConfig;
 };
 
@@ -170,10 +172,10 @@ export abstract class IOnChainGasModelFactory {
   public abstract buildGasModel({
     chainId,
     gasPriceWei,
-    pools: LiquidityCalculationPools,
+    pools,
     amountToken,
     quoteToken,
-    v2poolProvider: V2poolProvider,
+    v2poolProvider,
     l2GasDataProvider,
     providerConfig,
   }: BuildOnChainGasModelFactoryType): Promise<
