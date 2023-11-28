@@ -56,7 +56,10 @@ import {
   WXDAI_GNOSIS,
   USDC_AXL_FANTOM,
   USDC_LZ_EON,
-  USDC_LZ_FANTOM
+  USDC_LZ_FANTOM,
+  USDT_BITTORRENT,
+  WBTC_BITTORRENT,
+  ETH_BITTORRENT
 } from '../../../providers/token-provider';
 import {
   IV2PoolProvider,
@@ -177,7 +180,12 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BNB]: [DAI_BNB, USDC_BNB, USDT_BNB],
   [ChainId.AVALANCHE]: [DAI_AVAX, USDC_AVAX],
   [ChainId.BASE]: [USDC_BASE],
-  [ChainId.BIT_TORRENT_MAINNET]: [USDC_BITTORRENT],
+  [ChainId.BIT_TORRENT_MAINNET]: [
+    USDC_BITTORRENT,
+    USDT_BITTORRENT,
+    WBTC_BITTORRENT,
+    ETH_BITTORRENT,
+  ],
   [ChainId.FANTOM]: [USDC_AXL_FANTOM, USDC_LZ_FANTOM],
   [ChainId.EON]: [USDC_LZ_EON],
 };
