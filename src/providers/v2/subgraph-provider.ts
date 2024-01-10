@@ -38,6 +38,9 @@ type RawV2SubgraphPool = {
 const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
     'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v2-dev',
+  [ChainId.FANTOM]:
+    'https://subgraph.spook.fi/subgraphs/name/eerieeight/spooky-swap-new',
+
 };
 
 const threshold = 0.025;

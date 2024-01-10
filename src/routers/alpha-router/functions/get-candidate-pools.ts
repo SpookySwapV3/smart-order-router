@@ -186,7 +186,7 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
     WBTC_BITTORRENT,
     ETH_BITTORRENT,
   ],
-  [ChainId.FANTOM]: [USDC_AXL_FANTOM, USDC_LZ_FANTOM],
+  [ChainId.FANTOM]: [WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM]!, USDC_AXL_FANTOM, USDC_LZ_FANTOM],
   [ChainId.EON]: [USDC_LZ_EON],
 };
 

@@ -124,7 +124,7 @@ export enum ChainName {
   BASE = 'base-mainnet',
   BASE_GOERLI = 'base-goerli',
   BIT_TORRENT_MAINNET = 'bit-torrent-mainnet',
-  FANTOM = 'fantom-mainnet',
+  FANTOM = 'fantom',
   EON = 'eon-mainnet',
 }
 
