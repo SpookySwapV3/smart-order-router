@@ -39,8 +39,11 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
     'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v2-dev',
   [ChainId.FANTOM]:
+    'https://api.thegraph.com/subgraphs/name/eerieeight/spookyswap',
+  [ChainId.BIT_TORRENT_MAINNET]:
     'https://subgraph.spook.fi/subgraphs/name/eerieeight/spooky-swap-new',
-
+  [ChainId.EON]:
+    'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/spookyswap-eon'
 };
 
 const threshold = 0.025;

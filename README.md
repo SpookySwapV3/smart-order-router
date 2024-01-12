@@ -229,12 +229,21 @@ Total ticks crossed: 7
 
 ```
 ./bin/cli quote --tokenIn 0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 199
+
+Hop Quote ftm_e to link_e
+
+./bin/cli quote --tokenIn 0xAD9A21FF0c9d854cA8C1360AF28D4fcbDaC53B4F --tokenOut 0xfd3b093aB6bD4F40810f19e5fF822ac8Cc7e3184 --amount 10000 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 199 --debug
 ```
 
 ## Fantom Mainnet
 
 ```
 ./bin/cli quote --tokenIn 0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83 --tokenOut 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 250
+
+Hop Quote USDC_LZ -> WETH_LZ
+
+./bin/cli quote --tokenIn 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --tokenOut 0x695921034f0387eAc4e11620EE91b1b15A6A09fE --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 250 --debug
+
 ```
 
 ## EON Mainnet
