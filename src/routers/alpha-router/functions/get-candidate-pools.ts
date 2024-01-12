@@ -181,13 +181,14 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.AVALANCHE]: [DAI_AVAX, USDC_AVAX],
   [ChainId.BASE]: [USDC_BASE],
   [ChainId.BIT_TORRENT_MAINNET]: [
+    WRAPPED_NATIVE_CURRENCY[ChainId.BIT_TORRENT_MAINNET]!,
     USDC_BITTORRENT,
     USDT_BITTORRENT,
     WBTC_BITTORRENT,
     ETH_BITTORRENT,
   ],
   [ChainId.FANTOM]: [WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM]!, USDC_AXL_FANTOM, USDC_LZ_FANTOM],
-  [ChainId.EON]: [USDC_LZ_EON],
+  [ChainId.EON]: [WRAPPED_NATIVE_CURRENCY[ChainId.EON]!, USDC_LZ_EON],
 };
 
 class SubcategorySelectionPools<SubgraphPool> {

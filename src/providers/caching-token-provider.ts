@@ -158,11 +158,11 @@ export const CACHE_SEED_TOKENS: {
     ETH: ETH_BITTORRENT,
   },
   [ChainId.FANTOM]: {
-    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.BIT_TORRENT_MAINNET],
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM],
     USDC: USDC_AXL_FANTOM,
   },
   [ChainId.EON]: {
-    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.BIT_TORRENT_MAINNET],
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.EON],
     USDC: USDC_LZ_EON,
   },
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
