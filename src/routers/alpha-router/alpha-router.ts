@@ -44,7 +44,6 @@ import {
   TokenPropertiesProvider,
   TokenValidationResult,
   UniswapMulticallProvider,
-  URISubgraphProvider,
   V2QuoteProvider,
   V2SubgraphProvider,
   V2SubgraphProviderWithFallBacks,
@@ -86,7 +85,6 @@ import { SWAP_ROUTER_02_ADDRESSES, WRAPPED_NATIVE_CURRENCY } from '../../util';
 import { CurrencyAmount } from '../../util/amounts';
 import {
   ID_TO_CHAIN_ID,
-  ID_TO_NETWORK_NAME,
   V2_SUPPORTED,
 } from '../../util/chains';
 import {
@@ -671,7 +669,6 @@ export class AlphaRouter
         new TokenProvider(chainId, this.multicall2Provider)
       );
 
-    const chainName = ID_TO_NETWORK_NAME(chainId);
 
     // ipfs urls in the following format: `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/${protocol}/${chainName}.json`;
     if (v2SubgraphProvider) {
