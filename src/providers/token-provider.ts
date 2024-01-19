@@ -549,7 +549,7 @@ export const WBTT_BITTORRENT = new Token(
 export const USDC_BITTORRENT = new Token(
   ChainId.BIT_TORRENT_MAINNET,
   '0xAE17940943BA9440540940DB0F1877f101D39e8b',
-  18,
+  6,
   'USDC_e',
   'USD Coin (ETH)'
 );
