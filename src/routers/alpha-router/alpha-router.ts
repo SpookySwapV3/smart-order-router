@@ -80,7 +80,7 @@ import {
   IV3PoolProvider,
   V3PoolProvider,
 } from '../../providers/v3/pool-provider';
-import { IV3SubgraphProvider } from '../../providers/v3/subgraph-provider';
+import { IV3SubgraphProvider, V3SubgraphProvider } from '../../providers/v3/subgraph-provider';
 import { Erc20__factory } from '../../types/other/factories/Erc20__factory';
 import { SWAP_ROUTER_02_ADDRESSES, WRAPPED_NATIVE_CURRENCY } from '../../util';
 import { CurrencyAmount } from '../../util/amounts';
@@ -397,8 +397,8 @@ export type AlphaRouterConfig = {
 
 export class AlphaRouter
   implements
-    IRouter<AlphaRouterConfig>,
-    ISwapToRatio<AlphaRouterConfig, SwapAndAddConfig>
+  IRouter<AlphaRouterConfig>,
+  ISwapToRatio<AlphaRouterConfig, SwapAndAddConfig>
 {
   protected chainId: ChainId;
   protected provider: BaseProvider;
@@ -694,12 +694,7 @@ export class AlphaRouter
       this.v3SubgraphProvider = new V3SubgraphProviderWithFallBacks([
         new CachingV3SubgraphProvider(
           chainId,
-          new URISubgraphProvider(
-            chainId,
-            `https://cloudflare-ipfs.com/ipns/api.uniswap.org/v1/pools/v3/${chainName}.json`,
-            undefined,
-            0
-          ),
+          new V3SubgraphProvider(chainId),
           new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
         ),
         new StaticV3SubgraphProvider(chainId, this.v3PoolProvider),
@@ -1290,38 +1285,38 @@ export class AlphaRouter
         tokenPropertiesMap[tokenIn.address.toLowerCase()]
           ?.tokenValidationResult === TokenValidationResult.FOT
           ? new Token(
-              tokenIn.chainId,
-              tokenIn.address,
-              tokenIn.decimals,
-              tokenIn.symbol,
-              tokenIn.name,
-              true, // at this point we know it's valid token address
-              tokenPropertiesMap[
-                tokenIn.address.toLowerCase()
-              ]?.tokenFeeResult?.buyFeeBps,
-              tokenPropertiesMap[
-                tokenIn.address.toLowerCase()
-              ]?.tokenFeeResult?.sellFeeBps
-            )
+            tokenIn.chainId,
+            tokenIn.address,
+            tokenIn.decimals,
+            tokenIn.symbol,
+            tokenIn.name,
+            true, // at this point we know it's valid token address
+            tokenPropertiesMap[
+              tokenIn.address.toLowerCase()
+            ]?.tokenFeeResult?.buyFeeBps,
+            tokenPropertiesMap[
+              tokenIn.address.toLowerCase()
+            ]?.tokenFeeResult?.sellFeeBps
+          )
           : tokenIn;
 
       const tokenOutWithFotTax =
         tokenPropertiesMap[tokenOut.address.toLowerCase()]
           ?.tokenValidationResult === TokenValidationResult.FOT
           ? new Token(
-              tokenOut.chainId,
-              tokenOut.address,
-              tokenOut.decimals,
-              tokenOut.symbol,
-              tokenOut.name,
-              true, // at this point we know it's valid token address
-              tokenPropertiesMap[
-                tokenOut.address.toLowerCase()
-              ]?.tokenFeeResult?.buyFeeBps,
-              tokenPropertiesMap[
-                tokenOut.address.toLowerCase()
-              ]?.tokenFeeResult?.sellFeeBps
-            )
+            tokenOut.chainId,
+            tokenOut.address,
+            tokenOut.decimals,
+            tokenOut.symbol,
+            tokenOut.name,
+            true, // at this point we know it's valid token address
+            tokenPropertiesMap[
+              tokenOut.address.toLowerCase()
+            ]?.tokenFeeResult?.buyFeeBps,
+            tokenPropertiesMap[
+              tokenOut.address.toLowerCase()
+            ]?.tokenFeeResult?.sellFeeBps
+          )
           : tokenOut;
 
       // Generate the object to be cached
@@ -1941,17 +1936,17 @@ export class AlphaRouter
     const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
     const nativeQuoteTokenV3PoolPromise = !quoteToken.equals(nativeCurrency)
       ? getHighestLiquidityV3NativePool(
-          quoteToken,
-          this.v3PoolProvider,
-          providerConfig
-        )
+        quoteToken,
+        this.v3PoolProvider,
+        providerConfig
+      )
       : Promise.resolve(null);
     const nativeAmountTokenV3PoolPromise = !amountToken.equals(nativeCurrency)
       ? getHighestLiquidityV3NativePool(
-          amountToken,
-          this.v3PoolProvider,
-          providerConfig
-        )
+        amountToken,
+        this.v3PoolProvider,
+        providerConfig
+      )
       : Promise.resolve(null);
 
     const [usdPool, nativeQuoteTokenV3Pool, nativeAmountTokenV3Pool] =
