@@ -229,10 +229,18 @@ Total ticks crossed: 7
 
 ```
 ./bin/cli quote --tokenIn 0x23181F21DEa5936e24163FFABa4Ea3B316B57f3C --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 199
+```
 
 Hop Quote ftm_e to link_e
 
+```
 ./bin/cli quote --tokenIn 0xAD9A21FF0c9d854cA8C1360AF28D4fcbDaC53B4F --tokenOut 0xfd3b093aB6bD4F40810f19e5fF822ac8Cc7e3184 --amount 10000 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 199 --debug
+```
+
+V3 Hop Quote USDC_e => ftm => SPKT
+
+```
+./bin/cli quote --tokenIn 0xae17940943ba9440540940db0f1877f101d39e8b --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 199
 ```
 
 ## Fantom Mainnet
