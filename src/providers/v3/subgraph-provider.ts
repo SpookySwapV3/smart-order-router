@@ -66,8 +66,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.BIT_TORRENT_MAINNET]:
     'http://127.0.0.1:8000/subgraphs/name/ianlapham/uniswap-v3',
   [ChainId.FANTOM]:
-    //TODO: fill this
-    '',
+    'https://api.thegraph.com/subgraphs/name/0xalucard/ftm-spooky-v3',
   [ChainId.EON]:
     //TODO: fill this
     '',
