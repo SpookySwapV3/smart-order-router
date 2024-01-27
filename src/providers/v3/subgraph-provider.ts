@@ -44,7 +44,7 @@ export const printV3SubgraphPool = (s: V3SubgraphPool) =>
 export const printV2SubgraphPool = (s: V2SubgraphPool) =>
   `${s.token0.id}/${s.token1.id}`;
 
-const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
+export const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
     'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
   [ChainId.OPTIMISM]:
