@@ -64,7 +64,7 @@ export const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.BASE]:
     'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest',
   [ChainId.BIT_TORRENT_MAINNET]:
-    'http://127.0.0.1:8000/subgraphs/name/ianlapham/uniswap-v3',
+    'http://34.76.154.79:8000/subgraphs/name/ianlapham/uniswap-v3',
   [ChainId.FANTOM]:
     'https://api.thegraph.com/subgraphs/name/0xalucard/ftm-spooky-v3',
   [ChainId.EON]:
