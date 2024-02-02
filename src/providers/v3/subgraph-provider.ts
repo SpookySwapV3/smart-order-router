@@ -68,8 +68,7 @@ export const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.FANTOM]:
     'https://api.thegraph.com/subgraphs/name/0xalucard/ftm-spooky-v3',
   [ChainId.EON]:
-    //TODO: fill this
-    '',
+    'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/eon-spooky-v3',
 };
 
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.
