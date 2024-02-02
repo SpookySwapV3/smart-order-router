@@ -35,7 +35,7 @@ type RawV2SubgraphPool = {
   reserveUSD: string;
 };
 
-export const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
+const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
     'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v2-dev',
   [ChainId.FANTOM]:
