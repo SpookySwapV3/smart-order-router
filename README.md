@@ -265,8 +265,14 @@ v3 Hop Quote U
 
 ## EON Mainnet
 
+quote USDC_LZ -> WZEN
 ```
 ./bin/cli quote --tokenIn 0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53 --tokenOut 0xF5cB8652a84329A2016A386206761f455bCEDab6  --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 7332
+```
+
+v3 hop quote USDC_LZ -> lzWBTC
+```
+./bin/cli quote --tokenIn 0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53 --tokenOut 0x1d7fb99AED3C365B4DEf061B7978CE5055Dfc1e7  --amount .1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 7332
 ```
 
 
