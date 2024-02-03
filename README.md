@@ -265,7 +265,7 @@ Hop Quote USDC_LZ -> WETH_LZ
 v3 Hop Quote U
 
 ```
-./bin/cli quote --tokenIn 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --tokenOut 0x695921034f0387eAc4e11620EE91b1b15A6A09fE --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 250 --debug
+./bin/cli quote --tokenIn 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --tokenOut 0x695921034f0387eAc4e11620EE91b1b15A6A09fE --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 250 --debug
 
 ```
 
