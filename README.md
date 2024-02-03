@@ -240,8 +240,14 @@ Hop Quote ftm_e to link_e
 V3 Hop Quote USDC_e => ftm => SPKT
 
 ```
-./bin/cli quote --tokenIn 0xae17940943ba9440540940db0f1877f101d39e8b --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 199
+./bin/cli quote --tokenIn 0xae17940943ba9440540940db0f1877f101d39e8b --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 199 --debug
 ```
+
+Mixed Routing Test
+```
+./bin/cli quote --tokenIn 0xae17940943ba9440540940db0f1877f101d39e8b --tokenOut 0x3850fA3DB6E5Acc6d06EfC9B1eB4A9d1c0E3e068 --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 199 --debug
+```
+
 
 ## Fantom Mainnet
 
@@ -273,6 +279,10 @@ quote USDC_LZ -> WZEN
 v3 hop quote USDC_LZ -> lzWBTC
 ```
 ./bin/cli quote --tokenIn 0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53 --tokenOut 0x1d7fb99AED3C365B4DEf061B7978CE5055Dfc1e7  --amount .1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 7332
+```
+
+```
+./bin/cli quote --tokenIn 0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53 --tokenOut 0x1d7fb99AED3C365B4DEf061B7978CE5055Dfc1e7  --amount .1 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 7332 --debug
 ```
 
 
