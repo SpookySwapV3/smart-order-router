@@ -857,7 +857,7 @@ export const USDC_ON = (chainId: ChainId): Token => {
     case ChainId.BASE_GOERLI:
       return USDC_BASE_GOERLI;
     case ChainId.BIT_TORRENT_MAINNET:
-      return USDC_BITTORRENT;
+      return USDT_BITTORRENT;
     case ChainId.FANTOM:
       return USDC_LZ_FANTOM;
     case ChainId.EON:

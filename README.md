@@ -268,6 +268,12 @@ v3 Hop Quote U
 ./bin/cli quote --tokenIn 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --tokenOut 0x695921034f0387eAc4e11620EE91b1b15A6A09fE --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 250 --debug
 
 ```
+FTM => USDC_LZ
+```
+./bin/cli quote --tokenIn 0x21be370D5312f44cB42ce377BC9b8a0cEF1A4C83 --tokenOut 0x28a92dde19D9989F39A49905d7C9C2FAc7799bDf --amount 1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 250 --debug
+
+```
+
 
 ## EON Mainnet
 
