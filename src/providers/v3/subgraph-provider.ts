@@ -64,7 +64,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.BASE]:
     'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest',
   [ChainId.BIT_TORRENT_MAINNET]:
-    'http://btt-spooky.paintswap.finance/subgraphs/name/ianlapham/uniswap-v3',
+    'https://btt-spooky.paintswap.finance/subgraphs/name/ianlapham/uniswap-v3',
   [ChainId.FANTOM]:
     'https://api.thegraph.com/subgraphs/name/0xalucard/ftm-spooky-v3',
   [ChainId.EON]:
