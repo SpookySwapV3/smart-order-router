@@ -39,6 +39,8 @@ import {
   USDT_OPTIMISM,
   USDT_OPTIMISM_GOERLI,
   WBTC_GOERLI,
+  USDT_LZ_FANTOM,
+  USDT_BITTORRENT,
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -78,8 +80,8 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BNB]: [USDT_BNB, USDC_BNB, DAI_BNB],
   [ChainId.AVALANCHE]: [DAI_AVAX, USDC_AVAX],
   [ChainId.BASE]: [USDC_BASE],
-  [ChainId.BIT_TORRENT_MAINNET]: [USDC_BITTORRENT],
-  [ChainId.FANTOM]: [USDC_AXL_FANTOM, USDC_LZ_FANTOM],
+  [ChainId.BIT_TORRENT_MAINNET]: [USDC_BITTORRENT, USDT_BITTORRENT],
+  [ChainId.FANTOM]: [USDC_AXL_FANTOM, USDC_LZ_FANTOM, USDT_LZ_FANTOM],
   [ChainId.EON]: [USDC_LZ_EON],
 };
 

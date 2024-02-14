@@ -593,6 +593,15 @@ export const USDC_LZ_FANTOM = new Token(
   'LzUSD Coin (FTM)'
 );
 
+export const USDT_LZ_FANTOM = new Token(
+  ChainId.FANTOM,
+  '0xcc1b99dDAc1a33c201a742A1851662E87BC7f22C',
+  6,
+  'USDT_LZ',
+  'LzUSDT (FTM)'
+);
+
+
 export const USDC_LZ_EON = new Token(
   ChainId.EON,
   '0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53',

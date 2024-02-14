@@ -59,7 +59,8 @@ import {
   USDC_LZ_FANTOM,
   USDT_BITTORRENT,
   WBTC_BITTORRENT,
-  ETH_BITTORRENT
+  ETH_BITTORRENT,
+  USDT_LZ_FANTOM
 } from '../../../providers/token-provider';
 import {
   IV2PoolProvider,
@@ -187,7 +188,7 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
     WBTC_BITTORRENT,
     ETH_BITTORRENT,
   ],
-  [ChainId.FANTOM]: [WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM]!, USDC_AXL_FANTOM, USDC_LZ_FANTOM],
+  [ChainId.FANTOM]: [WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM]!, USDC_AXL_FANTOM, USDC_LZ_FANTOM, USDT_LZ_FANTOM],
   [ChainId.EON]: [WRAPPED_NATIVE_CURRENCY[ChainId.EON]!, USDC_LZ_EON],
 };
 
