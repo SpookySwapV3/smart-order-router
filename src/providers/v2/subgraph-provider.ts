@@ -39,7 +39,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.MAINNET]:
     'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v2-dev',
   [ChainId.FANTOM]:
-    'https://api.thegraph.com/subgraphs/name/eerieeight/spookyswap',
+    `https://gateway-arbitrum.network.thegraph.com/api/${process.env.FANTOM_SUBGRAPH_API_KEY}/subgraphs/id/HyhMfT7gehNHMBmFiExqeg3pDtop9UikjvBPfAXT3b21`,
   [ChainId.BIT_TORRENT_MAINNET]:
     'http://btt-spooky.paintswap.finance/subgraphs/name/spookyswapv2-upgraded/',
   [ChainId.EON]:
