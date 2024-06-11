@@ -66,7 +66,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.BIT_TORRENT_MAINNET]:
     'https://btt-spooky.paintswap.finance/subgraphs/name/ianlapham/uniswap-v3',
   [ChainId.FANTOM]:
-    `https://gateway-arbitrum.network.thegraph.com/api/${process.env.FANTOM_SUBGRAPH_API_KEY}/subgraphs/id/6WBxx3gYia4oCLsYMFTZs6HLEnEqVMdpeZDCABnM1tj2`,
+    `https://gateway-arbitrum.network.thegraph.com/api/843cb09d23c0017e2a57032663d62e49/subgraphs/id/6WBxx3gYia4oCLsYMFTZs6HLEnEqVMdpeZDCABnM1tj2`,
   [ChainId.EON]:
     'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/eon-spooky-v3',
 };
