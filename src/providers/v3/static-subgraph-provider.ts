@@ -69,6 +69,7 @@ import {
   ETH_BITTORRENT,
   WBTC_BITTORRENT,
   USDT_LZ_FANTOM,
+  USDC_BERA_TEST,
 } from '../token-provider';
 
 import { IV3PoolProvider } from './pool-provider';
@@ -170,10 +171,8 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     ETH_BITTORRENT,
   ],
   [ChainId.FANTOM]: [WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM], USDC_AXL_FANTOM, USDC_LZ_FANTOM, USDT_LZ_FANTOM],
-  [ChainId.EON]: [
-    WRAPPED_NATIVE_CURRENCY[ChainId.EON],
-    USDC_LZ_EON,
-  ],
+  [ChainId.EON]: [WRAPPED_NATIVE_CURRENCY[ChainId.EON],USDC_LZ_EON],
+  [ChainId.BERA_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.BERA_TESTNET], USDC_BERA_TEST]
 };
 
 /**

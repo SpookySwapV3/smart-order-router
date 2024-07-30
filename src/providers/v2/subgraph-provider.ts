@@ -43,7 +43,9 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.BIT_TORRENT_MAINNET]:
     'http://btt-spooky.paintswap.finance/subgraphs/name/spookyswapv2-upgraded/',
   [ChainId.EON]:
-    'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/spookyswap-eon'
+    'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/spookyswap-eon',
+  [ChainId.BERA_TESTNET]:
+    ''
 };
 
 const threshold = 0.025;

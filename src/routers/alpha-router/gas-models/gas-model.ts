@@ -41,6 +41,7 @@ import {
   WBTC_GOERLI,
   USDT_LZ_FANTOM,
   USDT_BITTORRENT,
+  USDC_BERA_TEST,
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -83,6 +84,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BIT_TORRENT_MAINNET]: [USDC_BITTORRENT, USDT_BITTORRENT],
   [ChainId.FANTOM]: [USDC_AXL_FANTOM, USDC_LZ_FANTOM, USDT_LZ_FANTOM],
   [ChainId.EON]: [USDC_LZ_EON],
+  [ChainId.BERA_TESTNET]: [USDC_BERA_TEST],
 };
 
 export type L1ToL2GasCosts = {

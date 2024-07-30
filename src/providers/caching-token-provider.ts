@@ -30,6 +30,7 @@ import {
   USDC_ARBITRUM_GOERLI,
   USDC_AVAX,
   USDC_BASE,
+  USDC_BERA_TEST,
   USDC_BITTORRENT,
   USDC_BNB,
   USDC_ETHEREUM_GNOSIS,
@@ -167,6 +168,10 @@ export const CACHE_SEED_TOKENS: {
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.EON],
     USDC: USDC_LZ_EON,
   },
+  [ChainId.BERA_TESTNET] : {
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.BERA_TESTNET],
+    USDC: USDC_BERA_TEST,
+  }
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };
 

@@ -601,7 +601,6 @@ export const USDT_LZ_FANTOM = new Token(
   'LzUSDT (FTM)'
 );
 
-
 export const USDC_LZ_EON = new Token(
   ChainId.EON,
   '0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53',
@@ -609,6 +608,15 @@ export const USDC_LZ_EON = new Token(
   'USDC',
   'USD Coin (EON)'
 );
+
+export const USDC_BERA_TEST = new Token(
+  ChainId.BERA_TESTNET,
+  '',
+  6,
+  'USDC',
+  'USD Coin (Bera Test)'
+);
+
 
 export class TokenProvider implements ITokenProvider {
   constructor(
@@ -871,6 +879,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_LZ_FANTOM;
     case ChainId.EON:
       return USDC_LZ_EON;
+    case ChainId.BERA_TESTNET:
+      return USDC_BERA_TEST;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
