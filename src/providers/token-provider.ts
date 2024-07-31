@@ -611,7 +611,7 @@ export const USDC_LZ_EON = new Token(
 
 export const USDC_BERA_TEST = new Token(
   ChainId.BERA_TESTNET,
-  '',
+  '0x153A59e72BcfaF9Bdb8d3864945D44595856A970',
   6,
   'USDC',
   'USD Coin (Bera Test)'
