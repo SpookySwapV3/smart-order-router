@@ -307,7 +307,7 @@ The main components to complete are:
 - Populate chainId and addresses in `src/util/chains.ts` and `src/util/addresses.ts`
 - Populate token providers in `src/providers/caching-token-provider` and `src/providers/token-provider.ts`
 - Populate gas constants in `src/routers/alpha-router/gas-models/*`
-- Populate bases in `src/routers/legacy-router/bases.ts`
+- Populate bases onin `src/routers/legacy-router/bases.ts`
 - Populate `test/integ/routers/alpha-router/alpha-router.integration.test.ts` and `src/providers/v2/static-subgraph-provider.ts`
 - Populate `src/routers/alpha-router/*`
 - Add a log to `/CHANGELOG.md`
