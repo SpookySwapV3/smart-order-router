@@ -291,6 +291,22 @@ v3 hop quote USDC_LZ -> lzWBTC
 ./bin/cli quote --tokenIn 0xCc44eB064CD32AAfEEb2ebb2a47bE0B882383b53 --tokenOut 0x1d7fb99AED3C365B4DEf061B7978CE5055Dfc1e7  --amount .1 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 7332 --debug
 ```
 
+## Bera Testnet
+
+
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x153A59e72BcfaF9Bdb8d3864945D44595856A970  --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 80084
+```
+
+quote v3 WBERA -> USDC
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x153A59e72BcfaF9Bdb8d3864945D44595856A970  --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 80084
+```
+
+quote mixed router
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x153A59e72BcfaF9Bdb8d3864945D44595856A970  --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 80084
+```
 
 ## Getting a v2 Pair address
 
