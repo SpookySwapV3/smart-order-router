@@ -293,19 +293,29 @@ v3 hop quote USDC_LZ -> lzWBTC
 
 ## Bera Testnet
 
-
+quote v2 WBERA -> USDC
 ```
 ./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x153A59e72BcfaF9Bdb8d3864945D44595856A970  --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 80084
 ```
+quote v2 Hop WBERA -> Fake 
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x3170d3f0dA76441b9A1Ad023Ab3eFafD94e32C0d  --amount 10 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 80084
+```
+
 
 quote v3 WBERA -> USDC
 ```
 ./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x153A59e72BcfaF9Bdb8d3864945D44595856A970  --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 80084
 ```
 
+quote v3 Hop WBERA -> Fake 
+```
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x3170d3f0dA76441b9A1Ad023Ab3eFafD94e32C0d  --amount 10 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 80084
+```
+
 quote mixed router
 ```
-./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x153A59e72BcfaF9Bdb8d3864945D44595856A970  --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 80084
+./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x3170d3f0dA76441b9A1Ad023Ab3eFafD94e32C0d  --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 80084
 ```
 
 ## Getting a v2 Pair address
