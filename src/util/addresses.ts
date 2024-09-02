@@ -34,7 +34,8 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.BIT_TORRENT_MAINNET].v3CoreFactoryAddress,
   [ChainId.FANTOM]: CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].v3CoreFactoryAddress,
   [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].v3CoreFactoryAddress,
-  [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].v3CoreFactoryAddress
+  [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].v3CoreFactoryAddress,
+  [ChainId.GOAT_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT_TESTNET].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -58,6 +59,7 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.FANTOM]: CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].quoterAddress,
   [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].quoterAddress,
   [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].quoterAddress,
+  [ChainId.GOAT_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT_TESTNET].quoterAddress,
 
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
@@ -74,6 +76,7 @@ export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
     CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].v1MixedRouteQuoterAddress,
   [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].v1MixedRouteQuoterAddress,
   [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].v1MixedRouteQuoterAddress,
+  [ChainId.GOAT_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT_TESTNET].v1MixedRouteQuoterAddress,
 };
 
 export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
@@ -97,6 +100,7 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.FANTOM]: CHAIN_TO_ADDRESSES_MAP[ChainId.FANTOM].multicallAddress,
   [ChainId.EON]: CHAIN_TO_ADDRESSES_MAP[ChainId.EON].multicallAddress,
   [ChainId.BERA_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.BERA_TESTNET].multicallAddress,
+  [ChainId.GOAT_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT_TESTNET].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -150,6 +154,7 @@ export const WETH9: {
     | ChainId.FANTOM
     | ChainId.EON
     | ChainId.BERA_TESTNET
+    | ChainId.GOAT_TESTNET
   >]: Token;
 } = {
   [ChainId.MAINNET]: new Token(
