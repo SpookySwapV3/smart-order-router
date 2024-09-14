@@ -32,6 +32,7 @@ import {
   USDC_OPTIMISM_GOERLI,
   USDC_POLYGON,
   USDC_SEPOLIA,
+  USDC_SONIC_TEST,
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_GOERLI,
@@ -87,6 +88,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.EON]: [USDC_LZ_EON],
   [ChainId.BERA_TESTNET]: [USDC_BERA_TEST],
   [ChainId.GOAT_TESTNET]: [USDC_GOAT_TEST],
+  [ChainId.SONIC_TESTNET]: [USDC_SONIC_TEST],
 };
 
 export type L1ToL2GasCosts = {
