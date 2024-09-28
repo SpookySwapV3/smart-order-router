@@ -318,6 +318,13 @@ quote mixed router
 ./bin/cli quote --tokenIn 0x7507c1dc16935B82698e4C63f2746A2fCf994dF8 --tokenOut 0x3170d3f0dA76441b9A1Ad023Ab3eFafD94e32C0d  --amount 10 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 80084
 ```
 
+## Sonic Testnet
+
+quote v2 WSonic -> CORAL
+```
+./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 64165
+```
+
 ## Getting a v2 Pair address
 
 ```
