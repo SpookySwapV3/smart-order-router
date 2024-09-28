@@ -620,10 +620,10 @@ export const USDC_BERA_TEST = new Token(
 
 export const USDC_SONIC_TEST = new Token(
   ChainId.SONIC_TESTNET,
-  '',
-  6,
-  'USDC',
-  'USD Coin (Sonic Test)'
+  '0xaf93888cbd250300470a1618206e036e11470149',
+  18,
+  'CORAL',
+  'Coral '
 );
 
 
