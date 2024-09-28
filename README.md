@@ -322,8 +322,18 @@ quote mixed router
 
 quote v2 WSonic -> CORAL
 ```
-./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 64165
+./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 64165 --debug
 ```
+
+```
+./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols v3 --router alpha --chainId 64165 --debug
+```
+
+```
+./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 64165 --debug
+```
+
+
 
 ## Getting a v2 Pair address
 

@@ -1,6 +1,6 @@
 {
   "name": "@spookyswaptest/smart-order-router",
-  "version": "  1.0.42-sonic002",
+  "version": "  1.0.42-sonic005",
   "description": "Spookyswap Smart Order Router",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
@@ -32,6 +32,7 @@
   },
   "resolutions": {
     "**/@uniswap/router-sdk": "1.6.0",
+    "**/@uniswap/v3-sdk": "3.10.0",
     "**/@uniswap/v2-sdk": "npm:@spookyswaptest/v2-sdk@1.0.2",
     "**/@uniswap/sdk-core": "npm:@spookyswaptest/sdk-core@1.0.26-sonic001",
     "**/@uniswap/universal-router-sdk": "npm:@spookyswaptest/universal-router-sdk@1.0.26-sonic002"
@@ -45,7 +46,7 @@
     "@uniswap/universal-router": "^1.0.1",
     "@uniswap/universal-router-sdk": "npm:@spookyswaptest/universal-router-sdk@1.0.26-sonic002",
     "@uniswap/v2-sdk": "npm:@spookyswaptest/v2-sdk@1.0.2",
-    "@uniswap/v3-sdk": "^3.10.0",
+    "@uniswap/v3-sdk": "3.10.0",
     "@uniswap/sdk-core": "npm:@spookyswaptest/sdk-core@1.0.26-sonic001",
     "async-retry": "^1.3.1",
     "await-timeout": "^1.1.1",
