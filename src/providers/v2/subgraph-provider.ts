@@ -45,7 +45,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.EON]:
     'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/spookyswap-eon',
   [ChainId.BERA_TESTNET]: 'https://api.goldsky.com/api/public/project_cl9frwjqo1lwz0hvkb5sb2xo8/subgraphs/spooky-beratestnetv2/1.0.0/gn',
-  [ChainId.SONIC_TESTNET]: 'https://api.goldsky.com/api/public/project_cl9frwjqo1lwz0hvkb5sb2xo8/subgraphs/spooky-beratestnetv2/1.0.0/gn',
+  [ChainId.SONIC_TESTNET]: 'https://graph.testnet.soniclabs.com/gql/subgraphs/name/RitzyDevUK/spooky-sonic-testnet',
 };
 
 const threshold = 0.025;
