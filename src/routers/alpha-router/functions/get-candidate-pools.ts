@@ -63,6 +63,7 @@ import {
   ETH_BITTORRENT,
   USDT_LZ_FANTOM,
   USDC_BERA_TEST,
+  USDC_GOAT_TEST,
 } from '../../../providers/token-provider';
 import {
   IV2PoolProvider,
@@ -194,6 +195,7 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.EON]: [WRAPPED_NATIVE_CURRENCY[ChainId.EON]!, USDC_LZ_EON],
   [ChainId.BERA_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.BERA_TESTNET]!, USDC_BERA_TEST],
   [ChainId.SONIC_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC_TESTNET]!, USDC_SONIC_TEST],
+  [ChainId.GOAT_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT_TESTNET]!, USDC_GOAT_TEST],
 };
 
 class SubcategorySelectionPools<SubgraphPool> {
