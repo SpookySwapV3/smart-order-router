@@ -522,9 +522,9 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
   ),
   [ChainId.GOAT_TESTNET]: new Token(
     ChainId.GOAT_TESTNET,
-    '',
+    '0xc9cB60b2635A1e2518B37Cb632C973e54C5AB3fF',
     18,
-    'wBTC',
+    'WBTC',
     'Wrapped BTC'
   )
 };
