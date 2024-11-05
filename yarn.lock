@@ -1770,10 +1770,10 @@
   resolved "https://registry.yarnpkg.com/@uniswap/token-lists/-/token-lists-1.0.0-beta.34.tgz#879461f5d4009327a24259bbab797e0f22db58c8"
   integrity sha512-Hc3TfrFaupg0M84e/Zv7BoF+fmMWDV15mZ5s8ZQt2qZxUcNw2GQW+L6L/2k74who31G+p1m3GRYbJpAo7d1pqA==
 
-"@uniswap/universal-router-sdk@npm:@spookyswaptestnet/universal-router-sdk@1.0.27-goat001":
-  version "1.0.27-goat001"
-  resolved "https://registry.yarnpkg.com/@spookyswaptestnet/universal-router-sdk/-/universal-router-sdk-1.0.27-goat001.tgz#fae3cef047ffd2e4488f5a898e877e350703b292"
-  integrity sha512-tAITptMpeJjQUtvVxoOfCuSulrOFfnjJrz4QeKM1s1fLHsYt3H5VQ1Jp0w4wz9ZqHZi4jhBFlo92IRty8AzEog==
+"@uniswap/universal-router-sdk@npm:@spookyswaptestnet/universal-router-sdk@1.0.27-goat002":
+  version "1.0.27-goat002"
+  resolved "https://registry.yarnpkg.com/@spookyswaptestnet/universal-router-sdk/-/universal-router-sdk-1.0.27-goat002.tgz#4f18cb71a76c2a250d00d49fcd8cf588397e7563"
+  integrity sha512-kIIs+Nl6uuhHknEuoHLFqY6/46rvc2yKj5Zj42FO3k2kIGi5jhi0VysOOr/Tqi8whjwDiaXZSOQVwiBPYce2EQ==
   dependencies:
     "@uniswap/permit2-sdk" "^1.2.0"
     "@uniswap/router-sdk" "1.6.0"
