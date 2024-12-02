@@ -110,7 +110,7 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.BERA_TESTNET;
     case 64165:
       return ChainId.SONIC_TESTNET;
-    case 48815:
+    case 48816:
       return ChainId.GOAT_TESTNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
@@ -305,7 +305,7 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.BERA_TESTNET;
     case 64165:
       return ChainName.SONIC_TESTNET;
-    case 48815:
+    case 48816:
       return ChainName.GOAT_TESTNET;
     default:
       throw new Error(`Unknown chain id: ${id}`);
@@ -522,7 +522,7 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
   ),
   [ChainId.GOAT_TESTNET]: new Token(
     ChainId.GOAT_TESTNET,
-    '0xc9cB60b2635A1e2518B37Cb632C973e54C5AB3fF',
+    '0xEE4bC42157cf65291Ba2FE839AE127e3Cc76f741',
     18,
     'WBTC',
     'Wrapped BTC'

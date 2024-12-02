@@ -628,7 +628,7 @@ export const USDC_SONIC_TEST = new Token(
 
 export const USDC_GOAT_TEST = new Token(
   ChainId.GOAT_TESTNET,
-  '0x045c50f565966433310Fc1d3042Fe8c59c1a9568',
+  '0x37375d3A50E9b9938F62f0Bf5F021d7Aa5444706',
   6,
   'USDC',
   'USD Coin (Goat Test)'
