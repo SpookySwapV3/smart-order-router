@@ -43,6 +43,7 @@ import {
   USDC_OPTIMISM_GOERLI,
   USDC_POLYGON,
   USDC_SEPOLIA,
+  USDC_SONIC,
   USDC_SONIC_TEST,
   USDT_ARBITRUM,
   USDT_BITTORRENT,
@@ -182,6 +183,10 @@ export const CACHE_SEED_TOKENS: {
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.GOAT_TESTNET],
     USDC: USDC_GOAT_TEST,
   },
+  [ChainId.SONIC] : {
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.SONIC],
+    USDC: USDC_SONIC
+  }
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };
 

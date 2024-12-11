@@ -44,6 +44,7 @@ import {
   USDT_BITTORRENT,
   USDC_BERA_TEST,
   USDC_GOAT_TEST,
+  USDC_SONIC,
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -89,6 +90,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.BERA_TESTNET]: [USDC_BERA_TEST],
   [ChainId.SONIC_TESTNET]: [USDC_SONIC_TEST],
   [ChainId.GOAT_TESTNET]: [USDC_GOAT_TEST],
+  [ChainId.SONIC]: [USDC_SONIC],
 };
 
 export type L1ToL2GasCosts = {

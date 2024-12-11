@@ -1730,10 +1730,10 @@
     "@uniswap/v2-sdk" "^3.2.0"
     "@uniswap/v3-sdk" "^3.10.0"
 
-"@uniswap/sdk-core@^4", "@uniswap/sdk-core@^4.0.7", "@uniswap/sdk-core@npm:@spookyswaptestnet/sdk-core@1.0.28-goat000":
-  version "1.0.28-goat000"
-  resolved "https://registry.yarnpkg.com/@spookyswaptestnet/sdk-core/-/sdk-core-1.0.28-goat000.tgz#78585cf3270816fea64df78fea20ee49d0f3e4ed"
-  integrity sha512-DIIqXISxf8Xx0zs+YFt7GX/HroTyMy2EJcsNUbnZzrZVT3cWCEJLUaSWFgXLSw+96Pf/+ODNxVuThIKWASgMWQ==
+"@uniswap/sdk-core@^4", "@uniswap/sdk-core@^4.0.7", "@uniswap/sdk-core@npm:@spookyswaptestnet/sdk-core@1.0.29-sonic000":
+  version "1.0.29-sonic000"
+  resolved "https://registry.yarnpkg.com/@spookyswaptestnet/sdk-core/-/sdk-core-1.0.29-sonic000.tgz#b7dc94adb96d8c856ff613a4cf372272eb59debc"
+  integrity sha512-nj1Exl618+WbZ2kmf7pgX3n/z5v6RcaeDRqyzDpUh863tyeboQ85r73iS2xFZXCjRwRvxARAC9vkOAAgTbnNnQ==
   dependencies:
     "@ethersproject/address" "^5.0.2"
     big.js "^5.2.2"
@@ -1770,14 +1770,14 @@
   resolved "https://registry.yarnpkg.com/@uniswap/token-lists/-/token-lists-1.0.0-beta.34.tgz#879461f5d4009327a24259bbab797e0f22db58c8"
   integrity sha512-Hc3TfrFaupg0M84e/Zv7BoF+fmMWDV15mZ5s8ZQt2qZxUcNw2GQW+L6L/2k74who31G+p1m3GRYbJpAo7d1pqA==
 
-"@uniswap/universal-router-sdk@npm:@spookyswaptestnet/universal-router-sdk@1.0.28-goat000":
-  version "1.0.28-goat000"
-  resolved "https://registry.yarnpkg.com/@spookyswaptestnet/universal-router-sdk/-/universal-router-sdk-1.0.28-goat000.tgz#c96e12706cd3796269ad17413d80f2ee279aa7cf"
-  integrity sha512-Lof0Z2MD4CWtRv+UZaUARP6ABHfUHLAQ8eKr4nfYBfqylqOqLZDLDq/M8qFXWfopq25bioIRftXBrSsSFMSynw==
+"@uniswap/universal-router-sdk@npm:@spookyswaptestnet/universal-router-sdk@1.0.29-sonic000":
+  version "1.0.29-sonic000"
+  resolved "https://registry.yarnpkg.com/@spookyswaptestnet/universal-router-sdk/-/universal-router-sdk-1.0.29-sonic000.tgz#c81425091f2f22993302a3f85c4f155a02d72907"
+  integrity sha512-tQDJPgO7Ct++xzg20L37mqFCPknnlpR0uyBMxa/1Pevuw/3UpsAxDMcs/lPREVtDsWabcmvWc5SIMckTCD10gQ==
   dependencies:
     "@uniswap/permit2-sdk" "^1.2.0"
     "@uniswap/router-sdk" "1.6.0"
-    "@uniswap/sdk-core" "npm:@spookyswaptestnet/sdk-core@1.0.28-goat000"
+    "@uniswap/sdk-core" "npm:@spookyswaptestnet/sdk-core@1.0.29-sonic000"
     "@uniswap/universal-router" "1.4.3"
     "@uniswap/v2-sdk" "^3.2.0"
     "@uniswap/v3-sdk" "^3.10.0"

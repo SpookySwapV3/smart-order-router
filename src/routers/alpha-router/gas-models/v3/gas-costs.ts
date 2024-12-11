@@ -49,6 +49,8 @@ export const BASE_SWAP_COST = (id: ChainId): BigNumber => {
       return BigNumber.from(2000);
     case ChainId.GOAT_TESTNET:
       return BigNumber.from(2000);
+    case ChainId.SONIC:
+      return BigNumber.from(2000);
   }
 };
 export const COST_PER_INIT_TICK = (id: ChainId): BigNumber => {
@@ -90,6 +92,8 @@ export const COST_PER_INIT_TICK = (id: ChainId): BigNumber => {
       return BigNumber.from(31000);
     case ChainId.GOAT_TESTNET:
       return BigNumber.from(31000);
+    case ChainId.SONIC:
+      return BigNumber.from(31000);
   }
 };
 
@@ -126,6 +130,7 @@ export const COST_PER_HOP = (id: ChainId): BigNumber => {
     case ChainId.BERA_TESTNET:
     case ChainId.SONIC_TESTNET:
     case ChainId.GOAT_TESTNET:
+    case ChainId.SONIC:
       return BigNumber.from(80000);
   }
 };
