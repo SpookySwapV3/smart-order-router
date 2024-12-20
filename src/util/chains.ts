@@ -163,7 +163,7 @@ export enum NativeCurrencyName {
   BERA_TESTNET = 'BERA',
   SONIC_TESTNET = 'S',
   GOAT_TESTNET = 'BTC',
-  SONIC = 'SONIC'
+  SONIC = 'S'
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -238,7 +238,7 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.BERA_TESTNET]: ['BERA', 'BERA', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
   [ChainId.SONIC_TESTNET]: ['S', 'SONIC', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
   [ChainId.GOAT_TESTNET]: ['BTC', 'BTC', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
-  [ChainId.SONIC]: ['SONIC', 'S', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
+  [ChainId.SONIC]: ['S', 'SONIC', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -815,7 +815,7 @@ class SonicNativeCurrency extends NativeCurrency {
   }
   public constructor(chainId: number) {
     if (!isSonic(chainId)) throw new Error('Not Sonic');
-    super(chainId, 18, 'Sonic', 'S');
+    super(chainId, 18, 'S', 'Sonic');
   }
 }
 
