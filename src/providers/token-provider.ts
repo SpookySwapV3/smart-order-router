@@ -626,6 +626,13 @@ export const USDC_SONIC_TEST = new Token(
   'Coral '
 );
 
+export const USDC_GOAT_TEST = new Token(
+  ChainId.GOAT_TESTNET,
+  '0x37375d3A50E9b9938F62f0Bf5F021d7Aa5444706',
+  6,
+  'USDC',
+  'USD Coin (Goat Test)'
+);
 
 export class TokenProvider implements ITokenProvider {
   constructor(
@@ -892,6 +899,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_BERA_TEST;
     case ChainId.SONIC_TESTNET:
       return USDC_SONIC_TEST;
+    case ChainId.GOAT_TESTNET:
+      return USDC_GOAT_TEST;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
