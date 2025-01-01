@@ -71,6 +71,7 @@ export const DEFAULT_ROUTING_CONFIG_BY_CHAIN = (
     case ChainId.BERA_TESTNET:
     case ChainId.SONIC_TESTNET:
     case ChainId.GOAT_TESTNET:
+    case ChainId.GOAT:
     case ChainId.SONIC:
     default:
       return {

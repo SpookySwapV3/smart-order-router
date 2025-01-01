@@ -29,6 +29,7 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.SONIC_TESTNET,
   ChainId.GOAT_TESTNET,
   ChainId.SONIC,
+  ChainId.GOAT,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -43,6 +44,7 @@ export const V2_SUPPORTED = [
   ChainId.SONIC_TESTNET,
   ChainId.GOAT_TESTNET,
   ChainId.SONIC,
+  ChainId.GOAT,
 ];
 
 export const HAS_L1_FEE = [
@@ -116,6 +118,8 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.SONIC_TESTNET;
     case 48816:
       return ChainId.GOAT_TESTNET;
+    case 2345:
+      return ChainId.GOAT;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -146,6 +150,7 @@ export enum ChainName {
   SONIC_TESTNET = 'sonic-testnet',
   GOAT_TESTNET = 'goat-testnet',
   SONIC = 'sonic',
+  GOAT = 'goat',
 }
 
 export enum NativeCurrencyName {
@@ -163,7 +168,8 @@ export enum NativeCurrencyName {
   BERA_TESTNET = 'BERA',
   SONIC_TESTNET = 'S',
   GOAT_TESTNET = 'BTC',
-  SONIC = 'S'
+  SONIC = 'S',
+  GOAT = 'BTC',
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -239,6 +245,7 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.SONIC_TESTNET]: ['S', 'SONIC', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
   [ChainId.GOAT_TESTNET]: ['BTC', 'BTC', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
   [ChainId.SONIC]: ['S', 'SONIC', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
+  [ChainId.GOAT]: ['BTC', 'BITCOIN', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -265,6 +272,7 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.SONIC_TESTNET]: NativeCurrencyName.SONIC_TESTNET,
   [ChainId.GOAT_TESTNET]: NativeCurrencyName.GOAT_TESTNET,
   [ChainId.SONIC]: NativeCurrencyName.SONIC,
+  [ChainId.GOAT]: NativeCurrencyName.GOAT,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -317,6 +325,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.SONIC_TESTNET;
     case 48816:
       return ChainName.GOAT_TESTNET;
+    case 2345:
+      return ChainName.GOAT;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -370,6 +380,8 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
       return process.env.JSON_RPC_PROVIDER_GOAT_TESTNET!;
     case ChainId.SONIC:
       return process.env.JSON_RPC_PROVIDER_SONIC!;
+    case ChainId.GOAT:	
+      return process.env.JSON_RPC_PROVIDER_GOAT!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -545,6 +557,13 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WS',
     'Wrapped Sonic'
+  ),
+  [ChainId.GOAT]: new Token(
+    ChainId.GOAT,
+    '0xbC10000000000000000000000000000000000000',
+    18,
+    'WGBTC',
+    'Wrapped Goat Bitcoin'
   )
 };
 
@@ -740,6 +759,10 @@ function isSonic(chainId: number): chainId is ChainId.SONIC {
   return chainId === ChainId.SONIC
 }
 
+function isGoat(chainId: number): chainId is ChainId.GOAT {
+  return chainId === ChainId.GOAT
+}
+
 class FantomNativeCurrency extends NativeCurrency {
   equals(other: Currency): boolean {
     return other.isNative && other.chainId === this.chainId;
@@ -816,6 +839,24 @@ class SonicNativeCurrency extends NativeCurrency {
   public constructor(chainId: number) {
     if (!isSonic(chainId)) throw new Error('Not Sonic');
     super(chainId, 18, 'S', 'Sonic');
+  }
+}
+
+class GoatNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+  get wrapped(): Token {
+    if (!isGoat(this.chainId)) throw new Error('Not goatchain');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+  public constructor(chainId: number) {
+    if (!isGoat(chainId)) throw new Error('Not goatchain');
+    super(chainId, 18, 'BTC', 'Bitcoin');
   }
 }
 
@@ -910,7 +951,9 @@ export function nativeOnChain(chainId: number): NativeCurrency {
     cachedNativeCurrency[chainId] = new GoatTestnetNativeCurrency(chainId);
   } else if (isSonic(chainId)) {
     cachedNativeCurrency[chainId] = new SonicNativeCurrency(chainId);
-  } 
+  } else if (isGoat(chainId)) {
+    cachedNativeCurrency[chainId] = new GoatNativeCurrency(chainId);
+  }
   else {
     cachedNativeCurrency[chainId] = ExtendedEther.onChain(chainId);
   }

@@ -34,6 +34,7 @@ import {
   USDC_BITTORRENT,
   USDC_BNB,
   USDC_ETHEREUM_GNOSIS,
+  USDC_GOAT,
   USDC_GOAT_TEST,
   USDC_LZ_EON,
   USDC_LZ_FANTOM,
@@ -186,7 +187,11 @@ export const CACHE_SEED_TOKENS: {
   [ChainId.SONIC] : {
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.SONIC],
     USDC: USDC_SONIC
-  }
+  },
+  [ChainId.GOAT] : {
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.GOAT],
+    USDC: USDC_GOAT,
+  },  
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };
 

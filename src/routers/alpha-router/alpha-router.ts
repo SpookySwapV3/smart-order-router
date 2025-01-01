@@ -595,6 +595,7 @@ export class AlphaRouter
         case ChainId.BERA_TESTNET:
         case ChainId.SONIC_TESTNET:
         case ChainId.GOAT_TESTNET:
+        case ChainId.GOAT:
         case ChainId.SONIC:
         default:
           this.onChainQuoteProvider = new OnChainQuoteProvider(
@@ -1657,6 +1658,7 @@ export class AlphaRouter
         ChainId.SONIC_TESTNET,
         ChainId.GOAT_TESTNET,
         ChainId.SONIC,
+        ChainId.GOAT,
       ].includes(this.chainId) && tradeType === TradeType.EXACT_INPUT;
 
     const beforeGetCandidates = Date.now();

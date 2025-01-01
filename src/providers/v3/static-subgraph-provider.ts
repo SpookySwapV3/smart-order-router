@@ -73,6 +73,7 @@ import {
   USDC_BERA_TEST,
   USDC_GOAT_TEST,
   USDC_SONIC,
+  USDC_GOAT,
 } from '../token-provider';
 
 import { IV3PoolProvider } from './pool-provider';
@@ -179,6 +180,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.SONIC_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC_TESTNET], USDC_SONIC_TEST],
   [ChainId.GOAT_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT_TESTNET], USDC_GOAT_TEST],
   [ChainId.SONIC]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC], USDC_SONIC],
+  [ChainId.GOAT]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT], USDC_GOAT],
 };
 
 /**

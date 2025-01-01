@@ -73,6 +73,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.SONIC_TESTNET]: 'https://graph.testnet.soniclabs.com/gql/subgraphs/name/0xALUCARD/spooky-sonic-v3',
   [ChainId.GOAT_TESTNET]: '',
   [ChainId.SONIC]: 'https://api.0xgraph.xyz/api/public/28820bd2-ad8b-4d40-a142-ce8d7c786f66/subgraphs/spookyswap/v3/-/gn',
+  [ChainId.GOAT]: '',
 };
 
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.
