@@ -333,6 +333,18 @@ quote v2 WSonic -> CORAL
 ./bin/cli quote --tokenIn 0xD31686E65f17542C7019B22b2E6A0C71e72aA8Dd --tokenOut 0xaf93888cbd250300470a1618206e036e11470149  --amount .1 --exactIn --minSplits 1 --protocols mixed --router alpha --chainId 64165 --debug
 ```
 
+## Sonic Mainnet
+
+
+quote v2 wrapped sonic -> lana
+```
+./bin/cli quote --tokenIn 0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38 --tokenOut 0x980c141a87196e17a50ffcaa2496cfa198d30308  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 146 --debug
+```
+
+quote v2 wrapped sonic -> yoko
+```
+./bin/cli quote --tokenIn 0x039e2fB66102314Ce7b64Ce5Ce3E5183bc94aD38 --tokenOut 0x29219dd400f2bf60e5a23d13be72b486d4038894  --amount .1 --exactIn --minSplits 1 --protocols v2 --router alpha --chainId 146 --debug
+```
 
 
 ## Getting a v2 Pair address
