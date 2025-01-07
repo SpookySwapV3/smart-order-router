@@ -642,6 +642,14 @@ export const USDC_SONIC = new Token(
   'USD Coin (Sonic)'
 );
 
+export const YOKO_SONIC = new Token(
+  ChainId.SONIC,
+  '0x59524D5667B299c0813Ba3c99a11C038a3908fBC',
+  18,
+  'YOKO',
+  'Yoko'
+);
+
 export const USDC_GOAT = new Token(
   ChainId.GOAT,
   '0x5C5Dc36c98d151D5410eEfc16DBB096F7F99523B',
