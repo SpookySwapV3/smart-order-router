@@ -175,7 +175,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     ETH_BITTORRENT,
   ],
   [ChainId.FANTOM]: [WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM], USDC_AXL_FANTOM, USDC_LZ_FANTOM, USDT_LZ_FANTOM],
-  [ChainId.EON]: [WRAPPED_NATIVE_CURRENCY[ChainId.EON],USDC_LZ_EON],
+  [ChainId.EON]: [WRAPPED_NATIVE_CURRENCY[ChainId.EON], USDC_LZ_EON],
   [ChainId.BERA_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.BERA_TESTNET], USDC_BERA_TEST],
   [ChainId.SONIC_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC_TESTNET], USDC_SONIC_TEST],
   [ChainId.GOAT_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT_TESTNET], USDC_GOAT_TEST],
@@ -233,6 +233,7 @@ export class StaticV3SubgraphProvider implements IV3SubgraphProvider {
         return [
           [tokenA, tokenB, FeeAmount.LOWEST],
           [tokenA, tokenB, FeeAmount.LOW],
+          [tokenA, tokenB, FeeAmount.LOWMED],
           [tokenA, tokenB, FeeAmount.MEDIUM],
           [tokenA, tokenB, FeeAmount.HIGH],
         ];

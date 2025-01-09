@@ -69,6 +69,7 @@ export async function getHighestLiquidityV3NativePool(
   const nativePools = _([
     FeeAmount.HIGH,
     FeeAmount.MEDIUM,
+    FeeAmount.LOWMED,
     FeeAmount.LOW,
     FeeAmount.LOWEST,
   ])
@@ -82,6 +83,7 @@ export async function getHighestLiquidityV3NativePool(
   const pools = _([
     FeeAmount.HIGH,
     FeeAmount.MEDIUM,
+    FeeAmount.LOWMED,
     FeeAmount.LOW,
     FeeAmount.LOWEST,
   ])
@@ -124,6 +126,7 @@ export async function getHighestLiquidityV3USDPool(
   const usdPools = _([
     FeeAmount.HIGH,
     FeeAmount.MEDIUM,
+    FeeAmount.LOWMED,
     FeeAmount.LOW,
     FeeAmount.LOWEST,
   ])
@@ -141,6 +144,7 @@ export async function getHighestLiquidityV3USDPool(
   const pools = _([
     FeeAmount.HIGH,
     FeeAmount.MEDIUM,
+    FeeAmount.LOWMED,
     FeeAmount.LOW,
     FeeAmount.LOWEST,
   ])
@@ -462,10 +466,10 @@ export function initSwapRouteFromExisting(
     blockNumber: BigNumber.from(swapRoute.blockNumber),
     methodParameters: swapRoute.methodParameters
       ? ({
-          calldata: swapRoute.methodParameters.calldata,
-          value: swapRoute.methodParameters.value,
-          to: swapRoute.methodParameters.to,
-        } as MethodParameters)
+        calldata: swapRoute.methodParameters.calldata,
+        value: swapRoute.methodParameters.value,
+        to: swapRoute.methodParameters.to,
+      } as MethodParameters)
       : undefined,
     simulationStatus: swapRoute.simulationStatus,
   };

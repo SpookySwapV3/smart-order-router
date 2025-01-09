@@ -32,7 +32,7 @@
   },
   "resolutions": {
     "**/@uniswap/router-sdk": "1.6.0",
-    "**/@uniswap/v3-sdk": "3.10.0",
+    "**/@uniswap/v3-sdk": "npm:@spookyswaptestnet/v3-sdk@3.11.1",
     "**/@uniswap/v2-sdk": "npm:@spookyswaptest/v2-sdk@1.0.2",
     "**/@uniswap/sdk-core": "npm:@spookyswaptestnet/sdk-core@1.0.29-goat-mainnet-001",
     "**/@uniswap/universal-router-sdk": "npm:@spookyswaptestnet/universal-router-sdk@1.0.29-goat-mainnet-002"
@@ -46,7 +46,7 @@
     "@uniswap/universal-router": "^1.0.1",
     "@uniswap/universal-router-sdk": "npm:@spookyswaptestnet/universal-router-sdk@1.0.29-goat-mainnet-002",
     "@uniswap/v2-sdk": "npm:@spookyswaptest/v2-sdk@1.0.2",
-    "@uniswap/v3-sdk": "3.10.0",
+    "@uniswap/v3-sdk": "npm:@spookyswaptestnet/v3-sdk@3.11.1",
     "@uniswap/sdk-core": "npm:@spookyswaptestnet/sdk-core@1.0.29-goat-mainnet-001",
     "async-retry": "^1.3.1",
     "await-timeout": "^1.1.1",

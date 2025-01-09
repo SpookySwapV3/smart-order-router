@@ -6,7 +6,7 @@ import {
 import { FeeAmount } from '@uniswap/v3-sdk';
 import JSBI from 'jsbi';
 
-export class CurrencyAmount extends CurrencyAmountRaw<Currency> {}
+export class CurrencyAmount extends CurrencyAmountRaw<Currency> { }
 
 export const MAX_UINT160 = '0xffffffffffffffffffffffffffffffffffffffff';
 
@@ -22,6 +22,8 @@ export function parseFeeAmount(feeAmountStr: string) {
       return FeeAmount.HIGH;
     case '3000':
       return FeeAmount.MEDIUM;
+    case '1400':
+      return FeeAmount.LOWMED;
     case '500':
       return FeeAmount.LOW;
     case '100':
@@ -37,6 +39,8 @@ export function unparseFeeAmount(feeAmount: FeeAmount) {
       return '10000';
     case FeeAmount.MEDIUM:
       return '3000';
+    case FeeAmount.LOWMED:
+      return '1400'
     case FeeAmount.LOW:
       return '500';
     case FeeAmount.LOWEST:
