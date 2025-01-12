@@ -332,6 +332,8 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
   }
 };
 
+export const SPOOKY_CHAINS = [ChainId.FANTOM, ChainId.EON, ChainId.BIT_TORRENT_MAINNET, ChainId.SONIC, ChainId.GOAT, ChainId.SONIC_TESTNET, ChainId.BERA_TESTNET, ChainId.GOAT_TESTNET]
+
 export const CHAIN_IDS_LIST = Object.values(ChainId).map((c) =>
   c.toString()
 ) as string[];

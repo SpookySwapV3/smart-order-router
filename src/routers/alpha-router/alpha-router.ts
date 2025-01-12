@@ -37,6 +37,7 @@ import {
   NodeJSCache,
   OnChainGasPriceProvider,
   OnChainQuoteProvider,
+  resolveURISubgraph,
   Simulator,
   StaticV2SubgraphProvider,
   StaticV3SubgraphProvider,
@@ -44,6 +45,7 @@ import {
   TokenPropertiesProvider,
   TokenValidationResult,
   UniswapMulticallProvider,
+  URISubgraphProvider,
   V2QuoteProvider,
   V2SubgraphProvider,
   V2SubgraphProviderWithFallBacks,
@@ -682,6 +684,16 @@ export class AlphaRouter
       this.v2SubgraphProvider = new V2SubgraphProviderWithFallBacks([
         new CachingV2SubgraphProvider(
           chainId,
+          new URISubgraphProvider(
+            chainId,
+            resolveURISubgraph(chainId, 'v2'),
+            undefined,
+            0
+          ),
+          new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
+        ),
+        new CachingV2SubgraphProvider(
+          chainId,
           new V2SubgraphProvider(chainId),
           new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
         ),
@@ -693,6 +705,16 @@ export class AlphaRouter
       this.v3SubgraphProvider = v3SubgraphProvider;
     } else {
       this.v3SubgraphProvider = new V3SubgraphProviderWithFallBacks([
+        new CachingV3SubgraphProvider(
+          chainId,
+          new URISubgraphProvider(
+            chainId,
+            resolveURISubgraph(chainId, 'v3'),
+            undefined,
+            0
+          ),
+          new NodeJSCache(new NodeCache({ stdTTL: 300, useClones: false }))
+        ),
         new CachingV3SubgraphProvider(
           chainId,
           new V3SubgraphProvider(chainId),
