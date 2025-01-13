@@ -1,6 +1,6 @@
 {
   "name": "@spookyswaptestnet/smart-order-router",
-  "version": "1.0.46-goat-mainnet-006",
+  "version": "1.0.46-sonic-001",
   "description": "Spookyswap Smart Order Router",
   "main": "build/main/index.js",
   "typings": "build/main/index.d.ts",
