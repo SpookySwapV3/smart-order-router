@@ -41,7 +41,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.FANTOM]:
     `https://gateway-arbitrum.network.thegraph.com/api/843cb09d23c0017e2a57032663d62e49/subgraphs/id/HyhMfT7gehNHMBmFiExqeg3pDtop9UikjvBPfAXT3b21`,
   [ChainId.BIT_TORRENT_MAINNET]:
-    'http://btt-spooky.paintswap.finance/subgraphs/name/spookyswapv2-upgraded/',
+    'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/bttc-v2/1.0.0/gn',
   [ChainId.EON]:
     'https://eon-graph.horizenlabs.io/subgraphs/name/0xALUKARD/spookyswap-eon',
   [ChainId.BERA_TESTNET]: 'https://api.goldsky.com/api/public/project_cl9frwjqo1lwz0hvkb5sb2xo8/subgraphs/spooky-beratestnetv2/1.0.0/gn',

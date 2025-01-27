@@ -64,7 +64,7 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.BASE]:
     'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest',
   [ChainId.BIT_TORRENT_MAINNET]:
-    'https://btt-spooky.paintswap.finance/subgraphs/name/ianlapham/uniswap-v3',
+    'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/bttc-v3/1.0.0/gn',
   [ChainId.FANTOM]:
     `https://gateway-arbitrum.network.thegraph.com/api/843cb09d23c0017e2a57032663d62e49/subgraphs/id/6WBxx3gYia4oCLsYMFTZs6HLEnEqVMdpeZDCABnM1tj2`,
   [ChainId.EON]:
