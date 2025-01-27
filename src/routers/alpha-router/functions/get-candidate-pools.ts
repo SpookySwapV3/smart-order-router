@@ -39,6 +39,7 @@ import {
   USDC_OPTIMISM_GOERLI,
   USDC_POLYGON,
   USDC_SEPOLIA,
+  USDC_SONIC_TEST,
   USDT_ARBITRUM,
   USDT_BNB,
   USDT_MAINNET,
@@ -62,7 +63,6 @@ import {
   ETH_BITTORRENT,
   USDT_LZ_FANTOM,
   USDC_BERA_TEST,
-  USDC_GOAT_TEST
 } from '../../../providers/token-provider';
 import {
   IV2PoolProvider,
@@ -193,7 +193,7 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.FANTOM]: [WRAPPED_NATIVE_CURRENCY[ChainId.FANTOM]!, USDC_AXL_FANTOM, USDC_LZ_FANTOM, USDT_LZ_FANTOM],
   [ChainId.EON]: [WRAPPED_NATIVE_CURRENCY[ChainId.EON]!, USDC_LZ_EON],
   [ChainId.BERA_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.BERA_TESTNET]!, USDC_BERA_TEST],
-  [ChainId.GOAT_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT_TESTNET]!, USDC_GOAT_TEST],
+  [ChainId.SONIC_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC_TESTNET]!, USDC_SONIC_TEST],
 };
 
 class SubcategorySelectionPools<SubgraphPool> {
