@@ -46,6 +46,7 @@ import {
   USDC_GOAT_TEST,
   USDC_SONIC,
   USDC_GOAT,
+  USDC_MONAD_TESTNET,
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -93,6 +94,7 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.GOAT_TESTNET]: [USDC_GOAT_TEST],
   [ChainId.SONIC]: [USDC_SONIC],
   [ChainId.GOAT]: [USDC_GOAT],
+  [ChainId.MONAD_TESTNET]: [USDC_MONAD_TESTNET],
 };
 
 export type L1ToL2GasCosts = {

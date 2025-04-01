@@ -66,6 +66,7 @@ import {
   USDC_GOAT_TEST,
   USDC_SONIC,
   USDC_GOAT,
+  USDC_MONAD_TESTNET,
 } from '../../../providers/token-provider';
 import {
   IV2PoolProvider,
@@ -200,6 +201,7 @@ const baseTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.GOAT_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT_TESTNET]!, USDC_GOAT_TEST],
   [ChainId.SONIC]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC]!, USDC_SONIC],
   [ChainId.GOAT]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT]!, USDC_GOAT],
+  [ChainId.MONAD_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.MONAD_TESTNET]!, USDC_MONAD_TESTNET],
 };
 
 class SubcategorySelectionPools<SubgraphPool> {
