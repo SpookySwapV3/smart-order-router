@@ -31,6 +31,8 @@ export const SUPPORTED_CHAINS: ChainId[] = [
   ChainId.SONIC,
   ChainId.GOAT,
   ChainId.MONAD_TESTNET,
+  ChainId.BERA,
+  ChainId.MANTLE,
   // Gnosis and Moonbeam don't yet have contracts deployed yet
 ];
 
@@ -47,6 +49,11 @@ export const V2_SUPPORTED = [
   ChainId.SONIC,
   ChainId.GOAT,
   ChainId.MONAD_TESTNET,
+  ChainId.ARBITRUM_ONE,
+  ChainId.AVALANCHE,
+  ChainId.BASE,
+  ChainId.BERA,
+  ChainId.MANTLE,
 ];
 
 export const HAS_L1_FEE = [
@@ -124,6 +131,10 @@ export const ID_TO_CHAIN_ID = (id: number): ChainId => {
       return ChainId.GOAT;
     case 10143:
       return ChainId.MONAD_TESTNET;
+    case 80094:
+      return ChainId.BERA;
+    case 5000:
+      return ChainId.MANTLE;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -156,6 +167,8 @@ export enum ChainName {
   SONIC = 'sonic',
   GOAT = 'goat',
   MONAD_TESTNET = 'monad-testnet',
+  BERA = 'bera',
+  MANTLE = 'mantle',
 }
 
 export enum NativeCurrencyName {
@@ -176,6 +189,10 @@ export enum NativeCurrencyName {
   SONIC = 'S',
   GOAT = 'BTC',
   MONAD_TESTNET = 'MON',
+  ARBITRUM_ONE = 'ETH',
+  BASE = 'ETH',
+  MANTLE = 'MNT',
+  BERA = 'BERA',
 }
 
 export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
@@ -253,6 +270,8 @@ export const NATIVE_NAMES_BY_ID: { [chainId: number]: string[] } = {
   [ChainId.SONIC]: ['S', 'SONIC', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
   [ChainId.GOAT]: ['BTC', 'BITCOIN', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
   [ChainId.MONAD_TESTNET]: ['MON', 'MONAD', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
+  [ChainId.BERA]: ['BERA', 'BERA', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
+  [ChainId.MANTLE]: ['MNT', 'MANTLE', '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee'],
 };
 
 export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
@@ -281,6 +300,8 @@ export const NATIVE_CURRENCY: { [chainId: number]: NativeCurrencyName } = {
   [ChainId.SONIC]: NativeCurrencyName.SONIC,
   [ChainId.GOAT]: NativeCurrencyName.GOAT,
   [ChainId.MONAD_TESTNET]: NativeCurrencyName.MONAD_TESTNET,
+  [ChainId.BERA]: NativeCurrencyName.BERA,
+  [ChainId.MANTLE]: NativeCurrencyName.MANTLE,
 };
 
 export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
@@ -337,6 +358,10 @@ export const ID_TO_NETWORK_NAME = (id: number): ChainName => {
       return ChainName.GOAT;
     case 10143:
       return ChainName.MONAD_TESTNET;
+    case 80094:
+      return ChainName.BERA;
+    case 5000:
+      return ChainName.MANTLE;
     default:
       throw new Error(`Unknown chain id: ${id}`);
   }
@@ -395,7 +420,11 @@ export const ID_TO_PROVIDER = (id: ChainId): string => {
     case ChainId.GOAT:	
       return process.env.JSON_RPC_PROVIDER_GOAT!;
     case ChainId.MONAD_TESTNET:
-    return process.env.JSON_RPC_PROVIDER_MONAD_TESTNET!;
+      return process.env.JSON_RPC_PROVIDER_MONAD_TESTNET!;
+    case ChainId.BERA:	
+      return process.env.JSON_RPC_PROVIDER_BERA!;
+    case ChainId.MANTLE:	
+      return process.env.JSON_RPC_PROVIDER_MANTLE!;
     default:
       throw new Error(`Chain id: ${id} not supported`);
   }
@@ -585,6 +614,20 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     18,
     'WMON',
     'Wrapped Monad'
+  ),
+  [ChainId.BERA]: new Token(
+    ChainId.MONAD_TESTNET,
+    '0x6969696969696969696969696969696969696969',
+    18,
+    'WBERA',
+    'Wrapped Bera'
+  ),
+  [ChainId.MANTLE]: new Token(
+    ChainId.MANTLE,
+    '0x78c1b0C915c4FAA5FffA6CAbf0219DA63d7f4cb8',
+    18,
+    'WMNT',
+    'Wrapped Mantle'
   )
 };
 
@@ -788,6 +831,14 @@ function isMonadTestnet(chainId: number): chainId is ChainId.MONAD_TESTNET {
   return chainId === ChainId.MONAD_TESTNET
 }
 
+function isBera(chainId: number): chainId is ChainId.BERA {
+  return chainId === ChainId.BERA
+}
+
+function isMantle(chainId: number): chainId is ChainId.MANTLE {
+  return chainId === ChainId.MANTLE
+}
+
 class FantomNativeCurrency extends NativeCurrency {
   equals(other: Currency): boolean {
     return other.isNative && other.chainId === this.chainId;
@@ -898,8 +949,44 @@ class MonadTestnetNativeCurrency extends NativeCurrency {
     throw new Error(`Does not support this chain ${this.chainId}`);
   }
   public constructor(chainId: number) {
-    if (!isGoat(chainId)) throw new Error('Not Monad Testnet chain');
+    if (!isMonadTestnet(chainId)) throw new Error('Not Monad Testnet chain');
     super(chainId, 18, 'MON', 'Monad');
+  }
+}
+
+class BeraNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+  get wrapped(): Token {
+    if (!isBera(this.chainId)) throw new Error('Not Berachain');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+  public constructor(chainId: number) {
+    if (!isBera(chainId)) throw new Error('Not Berachain');
+    super(chainId, 18, 'BERA', 'Bera');
+  }
+}
+
+class MantleNativeCurrency extends NativeCurrency {
+  equals(other: Currency): boolean {
+    return other.isNative && other.chainId === this.chainId;
+  }
+  get wrapped(): Token {
+    if (!isMantle(this.chainId)) throw new Error('Not Mantle chain');
+    const nativeCurrency = WRAPPED_NATIVE_CURRENCY[this.chainId];
+    if (nativeCurrency) {
+      return nativeCurrency;
+    }
+    throw new Error(`Does not support this chain ${this.chainId}`);
+  }
+  public constructor(chainId: number) {
+    if (!isMantle(chainId)) throw new Error('Not Mantle chain');
+    super(chainId, 18, 'MNT', 'Mantle');
   }
 }
 
@@ -998,6 +1085,10 @@ export function nativeOnChain(chainId: number): NativeCurrency {
     cachedNativeCurrency[chainId] = new GoatNativeCurrency(chainId);
   } else if (isMonadTestnet(chainId)) {
     cachedNativeCurrency[chainId] = new MonadTestnetNativeCurrency(chainId);
+  } else if (isBera(chainId)) {
+    cachedNativeCurrency[chainId] = new BeraNativeCurrency(chainId);
+  } else if (isMantle(chainId)) {
+    cachedNativeCurrency[chainId] = new MantleNativeCurrency(chainId);
   }
   else {
     cachedNativeCurrency[chainId] = ExtendedEther.onChain(chainId);

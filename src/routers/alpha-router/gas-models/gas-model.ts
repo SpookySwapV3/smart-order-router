@@ -47,6 +47,8 @@ import {
   USDC_SONIC,
   USDC_GOAT,
   USDC_MONAD_TESTNET,
+  USDC_BERA,
+  USDC_MANTLE,
 } from '../../../providers/token-provider';
 import { IV2PoolProvider } from '../../../providers/v2/pool-provider';
 import {
@@ -95,6 +97,8 @@ export const usdGasTokensByChain: { [chainId in ChainId]?: Token[] } = {
   [ChainId.SONIC]: [USDC_SONIC],
   [ChainId.GOAT]: [USDC_GOAT],
   [ChainId.MONAD_TESTNET]: [USDC_MONAD_TESTNET],
+  [ChainId.BERA]: [USDC_BERA],
+  [ChainId.MANTLE]: [USDC_MANTLE],
 };
 
 export type L1ToL2GasCosts = {

@@ -73,6 +73,9 @@ export const DEFAULT_ROUTING_CONFIG_BY_CHAIN = (
     case ChainId.GOAT_TESTNET:
     case ChainId.GOAT:
     case ChainId.MONAD_TESTNET:
+    case ChainId.BERA:
+    case ChainId.MANTLE:
+    case ChainId.AVALANCHE:
     case ChainId.SONIC:
     default:
       return {

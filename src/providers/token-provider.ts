@@ -213,7 +213,7 @@ export const DAI_OPTIMISM_GOERLI = new Token(
 
 export const USDC_ARBITRUM = new Token(
   ChainId.ARBITRUM_ONE,
-  '0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8',
+  '0xaf88d065e77c8cC2239327C5EDb3A432268e5831',
   6,
   'USDC',
   'USD//C'
@@ -666,6 +666,22 @@ export const USDC_MONAD_TESTNET = new Token(
   'USD Coin (Monad Test)'
 );
 
+export const USDC_BERA = new Token(
+  ChainId.BERA,
+  '0x549943e04f40284185054145c6e4e9568c1d3241',
+  6,
+  'USDC.E',
+  'Stargate Bridged USDC (Berachain)'
+);
+
+export const USDC_MANTLE = new Token(
+  ChainId.MONAD_TESTNET,
+  '0x09Bc4E0D864854c6aFB6eB9A9cdF58aC190D0dF9',
+  6,
+  'USDC',
+  'USD Coin (Mantle)'
+);
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
@@ -939,6 +955,10 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_GOAT;
     case ChainId.MONAD_TESTNET:
       return USDC_MONAD_TESTNET;
+    case ChainId.BERA:
+      return USDC_BERA;
+    case ChainId.MANTLE:
+      return USDC_MANTLE;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }

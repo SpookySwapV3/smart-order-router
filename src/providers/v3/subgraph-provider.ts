@@ -49,8 +49,8 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
     'https://api.thegraph.com/subgraphs/name/uniswap/uniswap-v3',
   [ChainId.OPTIMISM]:
     'https://api.thegraph.com/subgraphs/name/ianlapham/optimism-post-regenesis',
-  [ChainId.ARBITRUM_ONE]:
-    'https://api.thegraph.com/subgraphs/name/ianlapham/arbitrum-minimal',
+  // [ChainId.ARBITRUM_ONE]:
+  //   'https://api.thegraph.com/subgraphs/name/ianlapham/arbitrum-minimal',
   [ChainId.POLYGON]:
     'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-polygon',
   [ChainId.CELO]:
@@ -59,10 +59,10 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
     'https://api.thegraph.com/subgraphs/name/ianlapham/uniswap-v3-gorli',
   [ChainId.BNB]:
     'https://api.thegraph.com/subgraphs/name/ilyamk/uniswap-v3---bnb-chain',
-  [ChainId.AVALANCHE]:
-    'https://api.thegraph.com/subgraphs/name/lynnshaoyu/uniswap-v3-avax',
-  [ChainId.BASE]:
-    'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest',
+  // [ChainId.AVALANCHE]:
+  //   'https://api.thegraph.com/subgraphs/name/lynnshaoyu/uniswap-v3-avax',
+  // [ChainId.BASE]:
+  //   'https://api.studio.thegraph.com/query/48211/uniswap-v3-base/version/latest',
   [ChainId.BIT_TORRENT_MAINNET]:
     'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/bttc-v3/1.0.0/gn',
   [ChainId.FANTOM]:
@@ -75,6 +75,11 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.SONIC]: 'https://api.0xgraph.xyz/api/public/28820bd2-ad8b-4d40-a142-ce8d7c786f66/subgraphs/spookyswap/v3/v0.0.1/gn',
   [ChainId.GOAT]: 'https://api.goat.0xgraph.xyz/api/public/f31d1ab2-5380-484e-bfc2-d2b8d606add5/subgraphs/goatswap/v3/production/gn',
   [ChainId.MONAD_TESTNET]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/monad-testnet-v3/1.0.0/gn',
+  [ChainId.ARBITRUM_ONE]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/arbitrum-v3/1.0.0/gn',
+  [ChainId.BASE]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/base-v3/1.0.0/gn',
+  [ChainId.BERA]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/bera-v3/1.0.0/gn',
+  [ChainId.AVALANCHE]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/avalanche-v3/1.0.0/gn',
+  [ChainId.MANTLE]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/mantle-v3/1.0.0/gn',
 };
 
 const PAGE_SIZE = 1000; // 1k is max possible query size from subgraph.

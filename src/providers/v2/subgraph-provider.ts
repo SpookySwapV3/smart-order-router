@@ -50,6 +50,11 @@ const SUBGRAPH_URL_BY_CHAIN: { [chainId in ChainId]?: string } = {
   [ChainId.SONIC]: 'https://api.0xgraph.xyz/api/public/28820bd2-ad8b-4d40-a142-ce8d7c786f66/subgraphs/spookyswap/v2/v0.0.1/gn',
   [ChainId.GOAT]: 'https://api.goat.0xgraph.xyz/api/public/f31d1ab2-5380-484e-bfc2-d2b8d606add5/subgraphs/goatswap/v2/production/gn',
   [ChainId.MONAD_TESTNET]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/monad-testnet-v2/1.0.0/gn',
+  [ChainId.ARBITRUM_ONE]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/arbitrum-v2/1.0.0/gn',
+  [ChainId.BASE]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/base-v2/1.0.0/gn',
+  [ChainId.BERA]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/bera-v2/1.0.0/gn',
+  [ChainId.AVALANCHE]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/avalanche-v2/1.0.0/gn',
+  [ChainId.MANTLE]: 'https://api.goldsky.com/api/public/project_clss7z2o15cxh010fdvq909x6/subgraphs/mantle-v2/1.0.0/gn',
 };
 
 const threshold = 0.025;

@@ -12,7 +12,11 @@ import { log } from '../../util/log';
 import {
   DAI_MAINNET,
   ETH_BITTORRENT,
+  USDC_ARBITRUM,
+  USDC_AVAX,
   USDC_AXL_FANTOM,
+  USDC_BASE,
+  USDC_BERA,
   USDC_BERA_TEST,
   USDC_BITTORRENT,
   USDC_GOAT,
@@ -20,6 +24,7 @@ import {
   USDC_LZ_EON,
   USDC_LZ_FANTOM,
   USDC_MAINNET,
+  USDC_MANTLE,
   USDC_MONAD_TESTNET,
   USDC_SONIC,
   USDC_SONIC_TEST,
@@ -48,7 +53,7 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.SEPOLIA]: [WRAPPED_NATIVE_CURRENCY[ChainId.SEPOLIA]!],
   //v2 not deployed on [optimism, arbitrum, polygon, celo, gnosis, moonbeam, bnb, avalanche] and their testnets
   [ChainId.OPTIMISM]: [],
-  [ChainId.ARBITRUM_ONE]: [],
+  [ChainId.ARBITRUM_ONE]: [WRAPPED_NATIVE_CURRENCY[ChainId.ARBITRUM_ONE]!, USDC_ARBITRUM],
   [ChainId.ARBITRUM_GOERLI]: [],
   [ChainId.OPTIMISM_GOERLI]: [],
   [ChainId.POLYGON]: [],
@@ -58,9 +63,9 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.GNOSIS]: [],
   [ChainId.MOONBEAM]: [],
   [ChainId.BNB]: [],
-  [ChainId.AVALANCHE]: [],
+  [ChainId.AVALANCHE]: [WRAPPED_NATIVE_CURRENCY[ChainId.AVALANCHE]!, USDC_AVAX],
   [ChainId.BASE_GOERLI]: [],
-  [ChainId.BASE]: [],
+  [ChainId.BASE]: [WRAPPED_NATIVE_CURRENCY[ChainId.BASE]!, USDC_BASE],
   [ChainId.BIT_TORRENT_MAINNET]: [
     WRAPPED_NATIVE_CURRENCY[ChainId.BIT_TORRENT_MAINNET]!,
     USDC_BITTORRENT,
@@ -80,6 +85,8 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.SONIC]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC]!, USDC_SONIC, YOKO_SONIC],
   [ChainId.GOAT]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT]!, USDC_GOAT],
   [ChainId.MONAD_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.MONAD_TESTNET]!, USDC_MONAD_TESTNET],
+  [ChainId.BERA]: [WRAPPED_NATIVE_CURRENCY[ChainId.BERA]!, USDC_BERA],
+  [ChainId.MANTLE]: [WRAPPED_NATIVE_CURRENCY[ChainId.MANTLE]!, USDC_MANTLE],
 };
 
 /**
