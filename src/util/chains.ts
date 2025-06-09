@@ -616,7 +616,7 @@ export const WRAPPED_NATIVE_CURRENCY: { [chainId in ChainId]: Token } = {
     'Wrapped Monad'
   ),
   [ChainId.BERA]: new Token(
-    ChainId.MONAD_TESTNET,
+    ChainId.BERA,
     '0x6969696969696969696969696969696969696969',
     18,
     'WBERA',
