@@ -75,6 +75,7 @@ import {
   USDC_SONIC,
   USDC_GOAT,
   USDC_MONAD_TESTNET,
+  USDC_MONAD,
 } from '../token-provider';
 
 import { IV3PoolProvider } from './pool-provider';
@@ -183,6 +184,8 @@ const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.SONIC]: [WRAPPED_NATIVE_CURRENCY[ChainId.SONIC], USDC_SONIC],
   [ChainId.GOAT]: [WRAPPED_NATIVE_CURRENCY[ChainId.GOAT], USDC_GOAT],
   [ChainId.MONAD_TESTNET]: [WRAPPED_NATIVE_CURRENCY[ChainId.MONAD_TESTNET], USDC_MONAD_TESTNET],
+  [ChainId.MONAD]: [WRAPPED_NATIVE_CURRENCY[ChainId.MONAD], USDC_MONAD],
+
 };
 
 /**

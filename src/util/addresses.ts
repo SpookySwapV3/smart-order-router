@@ -40,6 +40,7 @@ export const V3_CORE_FACTORY_ADDRESSES: AddressMap = {
   [ChainId.SONIC]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC].v3CoreFactoryAddress,
   [ChainId.GOAT]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT].v3CoreFactoryAddress,
   [ChainId.MONAD_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MONAD_TESTNET].v3CoreFactoryAddress,
+  [ChainId.MONAD]: CHAIN_TO_ADDRESSES_MAP[ChainId.MONAD].v3CoreFactoryAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -68,6 +69,7 @@ export const QUOTER_V2_ADDRESSES: AddressMap = {
   [ChainId.GOAT]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT].quoterAddress,
   [ChainId.SONIC]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC].quoterAddress,
   [ChainId.MONAD_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MONAD_TESTNET].quoterAddress,
+  [ChainId.MONAD]: CHAIN_TO_ADDRESSES_MAP[ChainId.MONAD].quoterAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -88,6 +90,7 @@ export const MIXED_ROUTE_QUOTER_V1_ADDRESSES: AddressMap = {
   [ChainId.SONIC]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC].v1MixedRouteQuoterAddress,
   [ChainId.GOAT]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT].v1MixedRouteQuoterAddress,
   [ChainId.MONAD_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MONAD_TESTNET].v1MixedRouteQuoterAddress,
+  [ChainId.MONAD]: CHAIN_TO_ADDRESSES_MAP[ChainId.MONAD].v1MixedRouteQuoterAddress,
 };
 
 export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
@@ -116,6 +119,7 @@ export const UNISWAP_MULTICALL_ADDRESSES: AddressMap = {
   [ChainId.SONIC]: CHAIN_TO_ADDRESSES_MAP[ChainId.SONIC].multicallAddress,
   [ChainId.GOAT]: CHAIN_TO_ADDRESSES_MAP[ChainId.GOAT].multicallAddress,
   [ChainId.MONAD_TESTNET]: CHAIN_TO_ADDRESSES_MAP[ChainId.MONAD_TESTNET].multicallAddress,
+  [ChainId.MONAD]: CHAIN_TO_ADDRESSES_MAP[ChainId.MONAD].multicallAddress,
   // TODO: Gnosis + Moonbeam contracts to be deployed
 };
 
@@ -174,6 +178,7 @@ export const WETH9: {
     | ChainId.SONIC
     | ChainId.GOAT
     | ChainId.MONAD_TESTNET
+    | ChainId.MONAD
   >]: Token;
 } = {
   [ChainId.MAINNET]: new Token(

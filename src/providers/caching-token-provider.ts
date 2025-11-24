@@ -40,6 +40,7 @@ import {
   USDC_LZ_FANTOM,
   USDC_MAINNET,
   USDC_MONAD_TESTNET,
+  USDC_MONAD,
   USDC_MOONBEAM,
   USDC_OPTIMISM,
   USDC_OPTIMISM_GOERLI,
@@ -196,6 +197,10 @@ export const CACHE_SEED_TOKENS: {
   [ChainId.MONAD_TESTNET] : {
     WETH: WRAPPED_NATIVE_CURRENCY[ChainId.MONAD_TESTNET],
     USDC: USDC_MONAD_TESTNET,
+  },
+  [ChainId.MONAD] : {
+    WETH: WRAPPED_NATIVE_CURRENCY[ChainId.MONAD],
+    USDC: USDC_MONAD,
   },
   // Currently we do not have providers for Moonbeam mainnet or Gnosis testnet
 };

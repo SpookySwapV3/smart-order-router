@@ -666,6 +666,14 @@ export const USDC_MONAD_TESTNET = new Token(
   'USD Coin (Monad Test)'
 );
 
+export const USDC_MONAD = new Token(
+  ChainId.MONAD_TESTNET,
+  '0x754704Bc059F8C67012fEd69BC8A327a5aafb603',
+  6,
+  'USDC',
+  'USD Coin (Monad)'
+);
+
 export class TokenProvider implements ITokenProvider {
   constructor(
     private chainId: ChainId,
@@ -939,6 +947,8 @@ export const USDC_ON = (chainId: ChainId): Token => {
       return USDC_GOAT;
     case ChainId.MONAD_TESTNET:
       return USDC_MONAD_TESTNET;
+    case ChainId.MONAD:
+      return USDC_MONAD;
     default:
       throw new Error(`Chain id: ${chainId} not supported`);
   }
