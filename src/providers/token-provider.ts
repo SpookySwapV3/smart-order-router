@@ -667,7 +667,7 @@ export const USDC_MONAD_TESTNET = new Token(
 );
 
 export const USDC_MONAD = new Token(
-  ChainId.MONAD_TESTNET,
+  ChainId.MONAD,
   '0x754704Bc059F8C67012fEd69BC8A327a5aafb603',
   6,
   'USDC',
