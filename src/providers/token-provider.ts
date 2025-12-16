@@ -650,6 +650,14 @@ export const YOKO_SONIC = new Token(
   'Yoko'
 );
 
+export const GOATED_GOAT = new Token(
+  ChainId.GOAT,
+  '0xbc10000000000000000000000000000000000001',
+  18,
+  'GOATED',
+  'Goat Network'
+);
+
 export const USDC_GOAT = new Token(
   ChainId.GOAT,
   '0xE1AD845D93853fff44990aE0DcecD8575293681e',
